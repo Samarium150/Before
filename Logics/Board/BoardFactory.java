@@ -24,7 +24,24 @@ public abstract class BoardFactory {
 		return -1;
 	}
 	
+	/*
+	 * @id  return the input piece belongs to which player, 0 if is not found.
+	 */
+	public int getPieceOwner(int id) {
+		for(PieceFactory p : p1) {
+			if (p.id == id) {
+				return 1;
+			}
+		}
+		for(PieceFactory p : p2) {
+			if (p.id == id) {
+				return 2;
+			}
+		}
+		return -1;
+	}
 	public PieceFactory[] getOverallLocation() {return location;}
+	
 	
 	public PieceFactory getPiece(int squareNum) {
 		
@@ -52,9 +69,13 @@ public abstract class BoardFactory {
 		if (this.spotIsVaild(squareNum)) {
 			location[squareNum] = piece;
 			if (player == 1) {
-				p1.add(piece);
+				p1.add(piece);	
+			}
+			if (player == 2) {
+				p2.add(piece);
 			}
 			return true;	
+			
 		}
 		return false;
 	}
@@ -73,15 +94,21 @@ public abstract class BoardFactory {
 		return -1;
 	}
 	
+	/*
+	 * replace all empty spot with None
+	 */
 	public void initializeBoard() {
 		for (int i = 0; i < location.length; i++) {
 			location[i] = new None();
 		}
 	}
 	
+	/*
+	 * return the owner of this square, -1 if is failed, 0 if is None.
+	 */
 	public int getSquareOwner(int squareNum) {
 		if(squareNum < 0 || squareNum >= location.length) return -1;
-		if(location[squareNum].owner >= 1) return location[squareNum].owner;
+		if(location[squareNum].getOwner() >= 1) return location[squareNum].getOwner();
 		return 0;
 		
 	}
