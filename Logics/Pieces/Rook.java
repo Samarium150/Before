@@ -6,10 +6,9 @@ import Board.BoardFactory;
 
 public class Rook extends PieceFactory{
 	
-	public Rook(BoardFactory board, int id, int owner) {
+	public Rook(BoardFactory board, int id) {
 		this.board = board;
 		this.id = id;
-		this.owner = owner;
 	}
 
 	@Override

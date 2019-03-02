@@ -21,5 +21,7 @@ public class None extends PieceFactory{
 	public String toString() {
 		return "o";
 	}
+	
+	public int getOwner() {return 0;}
 
 }
