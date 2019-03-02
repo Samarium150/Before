@@ -6,23 +6,22 @@ import Board.BoardFactory;
 
 public class Pawn extends PieceFactory{
 	
-	public Pawn(BoardFactory board, int id, int owner) {
+	public Pawn(BoardFactory board, int id) {
 		this.board = board;
 		this.id = id;
-		this.owner = owner;
 	}
 
 	@Override
 	public ArrayList<Integer> possibleMoves() {
 		int curr = this.board.getPieceLocation(this.id);
 		ArrayList<Integer> moves =  new ArrayList<Integer>();
-		int sign = (owner == 1)? 1: -1;
+		int sign = (board.getPieceOwner(this.id) == 1)? 1: -1;
 		
 		if(board.spotIsVaild(curr+sign*8)) moves.add(curr+sign*8);
 		
-		if(board.getSquareOwner(curr+sign*9) != 0 && board.getSquareOwner(curr+sign*7) != -1 && board.getSquareOwner(curr+sign*7) != owner) moves.add(curr+sign*7);
+		if(board.getSquareOwner(curr+sign*9) != 0 && board.getSquareOwner(curr+sign*7) != -1 && board.getSquareOwner(curr+sign*7) != board.getPieceOwner(this.id)) moves.add(curr+sign*7);
 		
-		if(board.getSquareOwner(curr+sign*9) != 0 && board.getSquareOwner(curr+sign*9) != -1 && board.getSquareOwner(curr+sign*9) != owner) moves.add(curr+sign*9);
+		if(board.getSquareOwner(curr+sign*9) != 0 && board.getSquareOwner(curr+sign*9) != -1 && board.getSquareOwner(curr+sign*9) != board.getPieceOwner(this.id)) moves.add(curr+sign*9);
 		
 		return movesFilter(moves);
 	}

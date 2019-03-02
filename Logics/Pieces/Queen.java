@@ -6,10 +6,9 @@ import Board.BoardFactory;
 
 public class Queen extends PieceFactory{
 	
-	public Queen(BoardFactory board, int id, int owner) {
+	public Queen(BoardFactory board, int id) {
 		this.board = board;
 		this.id = id;
-		this.owner = owner;
 	}
 
 	@Override

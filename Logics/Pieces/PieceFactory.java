@@ -6,7 +6,7 @@ import Board.BoardFactory;
 
 public abstract class PieceFactory {
 	
-	public int id, owner;
+	public int id;
 	
 	protected BoardFactory board;
 	
@@ -15,12 +15,16 @@ public abstract class PieceFactory {
 	
 	protected ArrayList<Integer> movesFilter(ArrayList<Integer> moves) {
 		for(int i = 0; i < moves.size(); i++) {
-			if ( (moves.get(i) < 0 || moves.get(i) >= board.getOverallLocation().length) || board.getSquareOwner(moves.get(i)) == owner)  {
+			if ( (moves.get(i) < 0 || moves.get(i) >= board.getOverallLocation().length) || board.getSquareOwner(moves.get(i)) == board.getPieceOwner(this.id))  {
 				moves.remove(i);
 				i--;
 			}
 		}
 		return moves;
+	}
+	
+	public int getOwner() {
+		return board.getPieceOwner(this.id);
 	}
 	
 	protected void rockOverallMovement(ArrayList<Integer> moves) {	
@@ -74,9 +78,9 @@ public abstract class PieceFactory {
 	private void straightMovementsStrategy(ArrayList<Integer> moves, int moveNum, int[] bounds) {
 		int curr = this.board.getPieceLocation(this.id);
 		for(int temp = curr + moveNum; board.getSquareOwner(temp) != -1; temp += moveNum) {
-			if (board.getSquareOwner(temp) == owner) break;
+			if (board.getSquareOwner(temp) == board.getPieceOwner(this.id)) break;
 			moves.add(temp);
-			if (this.isInArray(bounds, temp) || (board.getSquareOwner(temp) != 0 && board.getSquareOwner(temp) != owner) ) break;
+			if (this.isInArray(bounds, temp) || (board.getSquareOwner(temp) != 0 && board.getSquareOwner(temp) != board.getPieceOwner(this.id)) ) break;
 		}
 	}
 	
@@ -85,7 +89,7 @@ public abstract class PieceFactory {
 			int toId = this.board.getPiece(to).id;
 			board.removePiece(toId, this.board.getPieceLocation(toId));
 			board.removePiece(id, this.board.getPieceLocation(id));
-			board.addPiece(this, to, owner);
+			board.addPiece(this, to, board.getPieceOwner(this.id));
 			return true;
 		}
 		return false;

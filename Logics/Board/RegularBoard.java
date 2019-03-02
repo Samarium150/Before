@@ -24,44 +24,44 @@ public class RegularBoard extends BoardFactory{
 		 *	# You can also see the nums by calling [getSquareNums()]
 		 */
 		this.initializeBoard();
-		this.addPiece(new King(this, 1, 1), 4, 1);
-		this.addPiece(new King(this, 2, 2), 60, 2);
+		this.addPiece(new King(this, 1), 4, 1);
+		this.addPiece(new King(this, 2), 60, 2);
+
+		this.addPiece(new Queen(this, 11), 3, 1);
+		this.addPiece(new Queen(this, 12), 59, 2);
 		
-		this.addPiece(new Queen(this, 11, 1), 3, 1);
-		this.addPiece(new Queen(this, 12, 2), 59, 2);
+		this.addPiece(new Knight(this, 21), 1, 1);
+		this.addPiece(new Knight(this, 22), 6, 1);
+		this.addPiece(new Knight(this, 23), 57, 2);
+		this.addPiece(new Knight(this, 24), 62, 2);
 		
-		this.addPiece(new Knight(this, 21, 1), 1, 1);
-		this.addPiece(new Knight(this, 22, 1), 6, 1);
-		this.addPiece(new Knight(this, 23, 2), 57, 2);
-		this.addPiece(new Knight(this, 24, 2), 62, 2);
+		this.addPiece(new Rook(this, 31), 0, 1);
+		this.addPiece(new Rook(this, 32), 7, 1);
+		this.addPiece(new Rook(this, 33), 56, 2);
+		this.addPiece(new Rook(this, 34), 63, 2);
 		
-		this.addPiece(new Rook(this, 31, 1), 0, 1);
-		this.addPiece(new Rook(this, 32, 1), 7, 1);
-		this.addPiece(new Rook(this, 33, 2), 56, 2);
-		this.addPiece(new Rook(this, 34, 2), 63, 2);
+		this.addPiece(new Bishop(this, 41), 2, 1);
+		this.addPiece(new Bishop(this, 42), 5, 1);
+		this.addPiece(new Bishop(this, 43), 58, 2);
+		this.addPiece(new Bishop(this, 44), 61, 2);
 		
-		this.addPiece(new Bishop(this, 41, 1), 2, 1);
-		this.addPiece(new Bishop(this, 42, 1), 5, 1);
-		this.addPiece(new Bishop(this, 43, 2), 58, 2);
-		this.addPiece(new Bishop(this, 44, 2), 61, 2);
+		this.addPiece(new Pawn(this, 51), 8, 1);
+		this.addPiece(new Pawn(this, 52), 9, 1);
+		this.addPiece(new Pawn(this, 53), 10, 1);
+		this.addPiece(new Pawn(this, 54), 11, 1);
+		this.addPiece(new Pawn(this, 55), 12, 1);
+		this.addPiece(new Pawn(this, 56), 13, 1);
+		this.addPiece(new Pawn(this, 57), 14, 1);
+		this.addPiece(new Pawn(this, 58), 15, 1);
 		
-		this.addPiece(new Pawn(this, 51, 1), 8, 1);
-		this.addPiece(new Pawn(this, 52, 1), 9, 1);
-		this.addPiece(new Pawn(this, 53, 1), 10, 1);
-		this.addPiece(new Pawn(this, 54, 1), 11, 1);
-		this.addPiece(new Pawn(this, 55, 1), 12, 1);
-		this.addPiece(new Pawn(this, 56, 1), 13, 1);
-		this.addPiece(new Pawn(this, 57, 1), 14, 1);
-		this.addPiece(new Pawn(this, 58, 1), 15, 1);
-		
-		this.addPiece(new Pawn(this, 61, 2), 48, 2);
-		this.addPiece(new Pawn(this, 62, 2), 49, 2);
-		this.addPiece(new Pawn(this, 63, 2), 50, 2);
-		this.addPiece(new Pawn(this, 64, 2), 51, 2);
-		this.addPiece(new Pawn(this, 65, 2), 52, 2);
-		this.addPiece(new Pawn(this, 66, 2), 53, 2);
-		this.addPiece(new Pawn(this, 67, 2), 54, 2);
-		this.addPiece(new Pawn(this, 68, 2), 55, 2);
+		this.addPiece(new Pawn(this, 61), 48, 2);
+		this.addPiece(new Pawn(this, 62), 49, 2);
+		this.addPiece(new Pawn(this, 63), 50, 2);
+		this.addPiece(new Pawn(this, 64), 51, 2);
+		this.addPiece(new Pawn(this, 65), 52, 2);
+		this.addPiece(new Pawn(this, 66), 53, 2);
+		this.addPiece(new Pawn(this, 67), 54, 2);
+		this.addPiece(new Pawn(this, 68), 55, 2);
 	}
 
 	@Override
