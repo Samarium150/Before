@@ -18,6 +18,10 @@ public class ChessBoardPanel extends StackPane{
 		this.view = view;
 		this.canvas = new Canvas(800, 600);
 		this.getChildren().add(this.canvas);
+		this.setStyle("-fx-background-color: teal");
+
+		
+
 		
 
 	}

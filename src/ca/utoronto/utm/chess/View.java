@@ -11,6 +11,8 @@ public class View implements EventHandler<ActionEvent> {
 	private Stage stage;
 	private Model model;
 	
+	private ChessBoardPanel chessBoardPanel;
+	
 	View(Model model, Stage stage) {
 		this.model = model;
 		this.stage = stage;
@@ -18,7 +20,10 @@ public class View implements EventHandler<ActionEvent> {
 	}
 	
 	private void initUI(Stage stage) {
+		this.chessBoardPanel = new ChessBoardPanel(this);
+		
 		BorderPane root = new BorderPane();
+		root.setCenter(this.chessBoardPanel);
 		
 		Scene scene = new Scene(root);
 		stage.setScene(scene);
