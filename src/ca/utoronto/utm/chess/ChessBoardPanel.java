@@ -38,6 +38,7 @@ public class ChessBoardPanel extends GridPane{
 				button[i][j].setMinWidth(50);
 				button[i][j].setPrefHeight(50);
 				button[i][j].setId(i + ":" + j);
+				button[i][j].setOnAction(new ChessBoardPanelEventHandler());
 				
 				if(count%2 == 0) {
 					button[i][j].setStyle(colour_white);
