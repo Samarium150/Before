@@ -32,15 +32,15 @@ public class ChessBoardPanel extends GridPane{
 		Image white_rook = new Image(getClass().getResourceAsStream("white_rook.png"));
 		Image white_knight = new Image(getClass().getResourceAsStream("white_knight.png"));
 		Image white_bishop = new Image(getClass().getResourceAsStream("white_bishop.png"));
-		//Image white_queen = new Image(getClass().getResourceAsStream());
-		//Image white_king = new Image(getClass().getResourceAsStream());
+		Image white_queen = new Image(getClass().getResourceAsStream("white_queen.png"));
+		Image white_king = new Image(getClass().getResourceAsStream("white_king.png"));
 		
 		Image black_pawn = new Image(getClass().getResourceAsStream("black_pawn.png"));
 		Image black_rook = new Image(getClass().getResourceAsStream("black_rook.png"));
 		Image black_knight = new Image(getClass().getResourceAsStream("black_knight.png"));
 		Image black_bishop = new Image(getClass().getResourceAsStream("black_bishop.png"));
-		//Image black_queen = new Image(getClass().getResourceAsStream());
-		//Image black_king = new Image(getClass().getResourceAsStream());
+		Image black_queen = new Image(getClass().getResourceAsStream("black_queen.png"));
+		Image black_king = new Image(getClass().getResourceAsStream("black_king.png"));
 
 		this.view = view;
 		this.canvas = new Canvas(50, 50);
@@ -88,9 +88,12 @@ public class ChessBoardPanel extends GridPane{
 		button[0][0].setGraphic(new ImageView(black_rook));
 		button[0][1].setGraphic(new ImageView(black_knight));
 		button[0][2].setGraphic(new ImageView(black_bishop));
+		button[0][3].setGraphic(new ImageView(black_queen));
+		button[0][4].setGraphic(new ImageView(black_king));
 		button[0][5].setGraphic(new ImageView(black_bishop));
-		button[0][7].setGraphic(new ImageView(black_rook));
 		button[0][6].setGraphic(new ImageView(black_knight));
+		button[0][7].setGraphic(new ImageView(black_rook));
+		
 		
 		
 		
@@ -101,9 +104,12 @@ public class ChessBoardPanel extends GridPane{
 		button[7][0].setGraphic(new ImageView(white_rook));
 		button[7][1].setGraphic(new ImageView(white_knight));
 		button[7][2].setGraphic(new ImageView(white_bishop));
+		button[7][3].setGraphic(new ImageView(white_queen));
+		button[7][4].setGraphic(new ImageView(white_king));
 		button[7][5].setGraphic(new ImageView(white_bishop));
-		button[7][7].setGraphic(new ImageView(white_rook));
 		button[7][6].setGraphic(new ImageView(white_knight));
+		button[7][7].setGraphic(new ImageView(white_rook));
+		
 		
 		
 		
