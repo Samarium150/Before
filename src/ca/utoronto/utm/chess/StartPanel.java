@@ -38,7 +38,6 @@ public class StartPanel extends StackPane {
 		label.setGraphic(new ImageView(king2));
 		this.getChildren().add(label);
 		this.setAlignment(label, Pos.CENTER);
-
 	}
 
 }
