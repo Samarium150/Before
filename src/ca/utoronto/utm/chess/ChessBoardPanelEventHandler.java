@@ -15,7 +15,6 @@ public class ChessBoardPanelEventHandler implements EventHandler<ActionEvent>{
 	View view; 
 	
 
-
 	public ChessBoardPanelEventHandler(View view) {
 		this.view = view;
 	}
