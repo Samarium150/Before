@@ -18,6 +18,7 @@ public class View implements EventHandler<ActionEvent> {
 	
 
 	ChessBoardPanel chessBoardPanel;
+	MultiplayerPanel multiplayerPanel;
 
 	private StartPanel startPanel;
 	
@@ -35,6 +36,7 @@ public class View implements EventHandler<ActionEvent> {
 	private void initUI(Stage stage) {
 
 		this.chessBoardPanel = new ChessBoardPanel(this);
+		this.multiplayerPanel = new MultiplayerPanel(this);
 		
 		//BorderPane root = new BorderPane();
 		//root.setCenter(this.chessBoardPanel);
@@ -128,6 +130,11 @@ public class View implements EventHandler<ActionEvent> {
 
 	public void changeToBoard() {
 		this.root.setCenter(this.chessBoardPanel);
+		
+	}
+	
+	public void changeToMultiplayer() {
+		this.root.setCenter(this.multiplayerPanel);
 		
 	}
 }
