@@ -32,12 +32,16 @@ public class ChessBoardPanelEventHandler implements EventHandler<ActionEvent>{
 		String piece = ((Button) event.getSource()).getId();
 		Button button = (Button) event.getSource();
 		
-		
-		
+	/*	
+		if(piece == "NULL") {
+			return;
+		}
+		*/
 		//System.out.println(piece + " " + prev_piece);
 		if(prev_piece == "") {
 			prev_piece = piece;
 			button.setGraphic(null);
+			button.setId("NULL");
 		}else {
 			Image img = null;
 			
