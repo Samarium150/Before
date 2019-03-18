@@ -52,9 +52,6 @@ public class ChessBoardPanelEventHandler implements EventHandler<ActionEvent>{
 		}
 		
 		
-		//System.out.println(piece + " " + prev_piece);
-		
-		
 		
 	}
 

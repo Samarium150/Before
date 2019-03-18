@@ -63,7 +63,6 @@ public class ChessBoardPanel extends GridPane{
 				button[i][j].setPrefHeight(50);
 				button[i][j].setId("NULL" + " " + i + " " + j);
 				button[i][j].setOnAction(new ChessBoardPanelEventHandler(this.view));
-				//[i][j].setGraphic(new ImageView(white_pawn));
 				
 				if(count%2 == 0) {
 					button[i][j].setStyle(colour_white);
