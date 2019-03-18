@@ -38,19 +38,17 @@ public class ChessBoardPanelEventHandler implements EventHandler<ActionEvent>{
 		String piece = ((Button) event.getSource()).getId();
 		Button button = (Button) event.getSource();
 		
-	/*	
-		if(piece == "NULL") {
-			return;
-		}
-		*/
-		//System.out.println(piece + " " + prev_piece);
+		String[] piece_parts = piece.split("\\s+");
+
+	
+		/*
 		if(prev_piece == "") {
 			prev_piece = piece;
 			button.setGraphic(null);
 			button.setId("NULL");
 		}else {
 			Image img = null;
-			/*
+			
 			
 			if(prev_piece == "white_pawn") {
 				img = white_pawn;
@@ -82,10 +80,14 @@ public class ChessBoardPanelEventHandler implements EventHandler<ActionEvent>{
 			
 			button.setGraphic(new ImageView(img));
 			
-			*/
 			
+			
+			this.view.chessBoardPanel.setImg(x, y, piece);
 			prev_piece = "";
+			
+			
 		}
+		*/
 		
 		//System.out.println(piece + " " + prev_piece);
 		

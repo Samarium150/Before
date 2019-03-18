@@ -11,7 +11,7 @@ public class View implements EventHandler<ActionEvent> {
 	private Stage stage;
 	private Model model;
 	
-	private ChessBoardPanel chessBoardPanel;
+	ChessBoardPanel chessBoardPanel;
 	
 	View(Model model, Stage stage) {
 		this.model = model;
