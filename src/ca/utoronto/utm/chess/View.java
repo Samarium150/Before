@@ -52,7 +52,7 @@ public class View implements EventHandler<ActionEvent> {
 
 		menu = new Menu("Game");
 
-		menuItem = new MenuItem("New Game");
+		menuItem = new MenuItem("ONE");
 		menuItem.setId("New Game");
 		menuItem.setDisable(true); // disables button
 		menu.getItems().add(menuItem);

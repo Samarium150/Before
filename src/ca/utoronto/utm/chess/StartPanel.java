@@ -36,24 +36,7 @@ public class StartPanel extends StackPane {
 		label.setGraphic(new ImageView(king2));
 		this.getChildren().add(label);
 		this.setAlignment(label, Pos.CENTER);
-		
-		//Button button3 = new Button("asdfaaa");
-		//this.getChildren().add(button3);	
-		//this.getChildren().addAll(button,button3);
-		
-		
-		/*
-		Button button3 = new Button("Credits");
-		
-		VBox vbox = new VBox(10);
-		vbox.getChildren().addAll(button, button2, button3);
-		vbox.getChildren().add(button);
-		vbox.getChildren().add(button2);
-		vbox.getChildren().add(button3);
 
-		this.getChildren().add(vbox);
-		this.setAlignment(vbox, Pos.CENTER);
-		*/
 		
 	}
 
