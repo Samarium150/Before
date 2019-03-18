@@ -16,7 +16,7 @@ public class View implements EventHandler<ActionEvent> {
 	View(Model model, Stage stage) {
 		this.model = model;
 		this.stage = stage;
-		this.initUI(stage);
+		this.initUI(stage); 
 	}
 	
 	private void initUI(Stage stage) {
@@ -28,6 +28,7 @@ public class View implements EventHandler<ActionEvent> {
 		Scene scene = new Scene(root);
 		stage.setScene(scene);
 		stage.setTitle("Chess");
+		stage.setResizable(false);
 		stage.show();
 	}
 	

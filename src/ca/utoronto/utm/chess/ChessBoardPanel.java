@@ -45,9 +45,9 @@ public class ChessBoardPanel extends GridPane{
 		
 	
 		this.view = view;
-		this.canvas = new Canvas(50, 50);
+		this.canvas = new Canvas(75, 75);
 		this.getChildren().add(this.canvas);
-		this.setStyle("-fx-background-color: teal");
+		this.setStyle("-fx-background-color: pink");
 
 		
 		int row = 1;
