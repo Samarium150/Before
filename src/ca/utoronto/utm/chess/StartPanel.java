@@ -15,8 +15,6 @@ public class StartPanel extends StackPane {
 	protected Canvas canvas;
 	protected View view;
 	
-	Image king = new Image(getClass().getResourceAsStream("king.png"));
-	Image king1 = new Image(getClass().getResourceAsStream("king1.png"));
 	Image king2 = new Image(getClass().getResourceAsStream("king2.png"));
 	
 	public StartPanel(View view) {
