@@ -10,6 +10,7 @@ import javafx.scene.image.ImageView;
 public class ChessBoardPanelEventHandler implements EventHandler<ActionEvent>{
 	
 	static String prev_piece = "";
+	View view; 
 	
 	Image white_pawn = new Image(getClass().getResourceAsStream("white_pawn.png"));
 	Image white_rook = new Image(getClass().getResourceAsStream("white_rook.png"));
@@ -24,6 +25,11 @@ public class ChessBoardPanelEventHandler implements EventHandler<ActionEvent>{
 	Image black_bishop = new Image(getClass().getResourceAsStream("black_bishop.png"));
 	Image black_queen = new Image(getClass().getResourceAsStream("black_queen.png"));
 	Image black_king = new Image(getClass().getResourceAsStream("black_king1.png"));
+
+
+	public ChessBoardPanelEventHandler(View view) {
+		this.view = view;
+	}
 
 
 	@Override
@@ -44,6 +50,7 @@ public class ChessBoardPanelEventHandler implements EventHandler<ActionEvent>{
 			button.setId("NULL");
 		}else {
 			Image img = null;
+			/*
 			
 			if(prev_piece == "white_pawn") {
 				img = white_pawn;
@@ -74,6 +81,9 @@ public class ChessBoardPanelEventHandler implements EventHandler<ActionEvent>{
 			}
 			
 			button.setGraphic(new ImageView(img));
+			
+			*/
+			
 			prev_piece = "";
 		}
 		
