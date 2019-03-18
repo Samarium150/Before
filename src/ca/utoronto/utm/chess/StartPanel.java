@@ -19,13 +19,15 @@ public class StartPanel extends StackPane {
 	
 	public StartPanel(View view) {
 		this.view = view;
-		this.canvas = new Canvas(600, 400);
+		this.canvas = new Canvas(475, 400);
 		this.getChildren().add(this.canvas);
 		this.setStyle("-fx-background-color: pink");
 		
 		Button button = new Button("Start");
 		button.setMinWidth(100);
 		button.setPrefHeight(50);
+		button.setOnAction(new StartPanelEventHandler(this.view));
+		//button.setOnAction(new StartPanelEventHandler(this.view));
 		this.getChildren().add(button);
 		this.setAlignment(button, Pos.BOTTOM_CENTER);
 

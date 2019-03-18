@@ -22,6 +22,8 @@ public class View implements EventHandler<ActionEvent> {
 	private StartPanel startPanel;
 	
 	Image icon = new Image(getClass().getResourceAsStream("icon.png"));
+	
+	BorderPane root = new BorderPane();
 
 	
 	View(Model model, Stage stage) {
@@ -31,15 +33,15 @@ public class View implements EventHandler<ActionEvent> {
 	}
 	
 	private void initUI(Stage stage) {
-/*
+
 		this.chessBoardPanel = new ChessBoardPanel(this);
 		
-		BorderPane root = new BorderPane();
-		root.setCenter(this.chessBoardPanel);
-*/
+		//BorderPane root = new BorderPane();
+		//root.setCenter(this.chessBoardPanel);
+
 		this.startPanel = new StartPanel(this);
 		
-		BorderPane root = new BorderPane();
+		//BorderPane root = new BorderPane();
 		root.setTop(createMenuBar());
 		root.setCenter(this.startPanel);
 
@@ -122,5 +124,10 @@ public class View implements EventHandler<ActionEvent> {
 	@Override
 	public void handle(ActionEvent event) {
 		// TODO: handle the event on View, like menus
+	}
+
+	public void changeToBoard() {
+		this.root.setCenter(this.chessBoardPanel);
+		
 	}
 }
