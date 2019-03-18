@@ -7,6 +7,7 @@ import javafx.stage.Stage;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Scanner;
@@ -26,36 +27,66 @@ public class Play extends Application{
 	private DataOutputStream dos;
 	private DataInputStream dis;
 	private ServerSocket serverSocket;
-	private int serverTurn = 1;
-	private int playerTurn = 0;
+	private boolean isHost = false;
+	private boolean playerTurn = false;
 	private boolean noCommunication = false;
 	private boolean serverAccepted = false;
+	private int playerColour = 0; // 0 for white pieces, 1 for black pieces
 	private int errors = 0;
 
 
-	public Chess() { // constructor for the class
+	public Play() { // constructor for the class
 		System.out.println("Input IP: ");
 		ip = scanner.nextLine();
 		System.out.println("Input Port: ");
 		port = scanner.nextInt();
-		while(port <1 || port > 65535) {
+		while(port < 1 || port > 65535) {
 			System.out.println("Invalid port");
 			port = scanner.nextInt();
 		}
+
+		if (!connect()) createServer();
+
+		// run the game here
+
+	}
+
+	private boolean connect() {
+		try {
+			socket = new Socket(ip, port);
+			dos = new DataOutputStream(socket.getOutputStream());
+			dis = new DataInputStream(socket.getInputStream());
+			serverAccepted = true;
+		} catch (IOException e) {
+			System.out.println("Unable to connect to the ip: " + ip + ":" + port + " | Starting a server");
+			return false;
+		}
+		System.out.println("Successfully connected to " + ip + ":" + port);
+		return true;
+	}
+
+	private void createServer() {
+		try {
+			serverSocket = new ServerSocket(port, 8, InetAddress.getByName(ip));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		isHost = true;
+		playerTurn = true;
 	}
 
 	public void run() { //placeholder for now
 		while(true){
-			update();
+			communicationCheck();
 
 			// check if the current turn is yours (depending on what player you are)
-			if(!(playerTurn == 1) && !serverAccepted) { // not sure if this comparison is the proper way
-				listenForServerRequest();
+			if(playerTurn && !serverAccepted) {
+				serverReq();
 			}
 		}
 	}
 
-	private void listenForServerRequest() {
+	private void serverReq() {
 		Socket socket = null;
 		try {
 			socket = serverSocket.accept(); // waits here until we get another connection
@@ -68,15 +99,17 @@ public class Play extends Application{
 		}
 	}
 
-	public void update(){ // placeholder for updating the board
+	public void communicationCheck(){
 		if(errors >= 10)
 			noCommunication = true;
 
-		if((serverTurn != playerTurn) && !noCommunication){
+		if(!playerTurn && !noCommunication){
 			try{
-				// using dis (DataInputStream) move the chess piece
-				// change serverTurn depending on number of players
-				//  check for checkmate
+				int space = dis.readInt();
+				if(playerTurn) playerColour = 0;
+				else playerColour = 1;
+				//check for checkmate
+				playerTurn = true;
 			} catch (IOException e) {
 				e.printStackTrace();
 				errors++;
@@ -86,7 +119,7 @@ public class Play extends Application{
 	}
 
 	public static void main(String[] args) {
-		launch(args);
+		Play chess = new Play();
 	}
 	
 	@Override
