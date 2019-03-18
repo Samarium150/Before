@@ -19,7 +19,7 @@ public class StartPanel extends StackPane {
 	
 	public StartPanel(View view) {
 		this.view = view;
-		this.canvas = new Canvas(475, 400);
+		this.canvas = new Canvas(475, 475);
 		this.getChildren().add(this.canvas);
 		this.setStyle("-fx-background-color: pink");
 		

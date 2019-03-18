@@ -60,7 +60,7 @@ public class ChessBoardPanel extends GridPane{
 				button[i][j] = new Button();
 				button[i][j].setLineSpacing(1);
 				button[i][j].setMinWidth(50);
-				button[i][j].setPrefHeight(50);
+				button[i][j].setMinHeight(50);
 				button[i][j].setId("NULL" + " " + i + " " + j);
 				button[i][j].setOnAction(new ChessBoardPanelEventHandler(this.view));
 				
