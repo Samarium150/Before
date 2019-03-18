@@ -59,7 +59,7 @@ public class ChessBoardPanel extends GridPane{
 				button[i][j].setLineSpacing(1);
 				button[i][j].setMinWidth(50);
 				button[i][j].setPrefHeight(50);
-				button[i][j].setId(i + ":" + j);
+				button[i][j].setId("NULL");
 				button[i][j].setOnAction(new ChessBoardPanelEventHandler());
 				//[i][j].setGraphic(new ImageView(white_pawn));
 				
@@ -83,6 +83,7 @@ public class ChessBoardPanel extends GridPane{
 		
 		for(int i = 0; i<8; i++) {
 			button[1][i].setGraphic(new ImageView(black_pawn));
+			button[1][i].setId("black_pawn");
 		}
 		
 		button[0][0].setGraphic(new ImageView(black_rook));
@@ -94,11 +95,21 @@ public class ChessBoardPanel extends GridPane{
 		button[0][6].setGraphic(new ImageView(black_knight));
 		button[0][7].setGraphic(new ImageView(black_rook));
 		
+		button[0][0].setId("black_rook");
+		button[0][1].setId("black_knight");
+		button[0][2].setId("black_bishop");
+		button[0][3].setId("black_queen");
+		button[0][4].setId("black_king");
+		button[0][5].setId("black_bishop");
+		button[0][6].setId("black_knight");
+		button[0][7].setId("black_rook");
+		
 		
 		
 		
 		for(int i = 0; i<8; i++) {
 			button[6][i].setGraphic(new ImageView(white_pawn));
+			button[6][i].setId("white_pawn");
 		}
 		
 		button[7][0].setGraphic(new ImageView(white_rook));
@@ -110,8 +121,14 @@ public class ChessBoardPanel extends GridPane{
 		button[7][6].setGraphic(new ImageView(white_knight));
 		button[7][7].setGraphic(new ImageView(white_rook));
 		
-		
-		
+		button[7][0].setId("white_rook");
+		button[7][1].setId("white_knight");
+		button[7][2].setId("white_bishop");
+		button[7][3].setId("white_queen");
+		button[7][4].setId("white_king");
+		button[7][5].setId("white_bishop");
+		button[7][6].setId("white_knight");
+		button[7][7].setId("white_rook");
 		
 		
 	}
