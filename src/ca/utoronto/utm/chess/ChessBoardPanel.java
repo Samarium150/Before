@@ -33,14 +33,14 @@ public class ChessBoardPanel extends GridPane{
 		Image white_knight = new Image(getClass().getResourceAsStream("white_knight.png"));
 		Image white_bishop = new Image(getClass().getResourceAsStream("white_bishop.png"));
 		Image white_queen = new Image(getClass().getResourceAsStream("white_queen.png"));
-		Image white_king = new Image(getClass().getResourceAsStream("white_king.png"));
+		Image white_king = new Image(getClass().getResourceAsStream("white_king1.png"));
 		
 		Image black_pawn = new Image(getClass().getResourceAsStream("black_pawn.png"));
 		Image black_rook = new Image(getClass().getResourceAsStream("black_rook.png"));
 		Image black_knight = new Image(getClass().getResourceAsStream("black_knight.png"));
 		Image black_bishop = new Image(getClass().getResourceAsStream("black_bishop.png"));
 		Image black_queen = new Image(getClass().getResourceAsStream("black_queen.png"));
-		Image black_king = new Image(getClass().getResourceAsStream("black_king.png"));
+		Image black_king = new Image(getClass().getResourceAsStream("black_king1.png"));
 
 		this.view = view;
 		this.canvas = new Canvas(50, 50);
