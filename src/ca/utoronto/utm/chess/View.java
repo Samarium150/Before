@@ -6,6 +6,7 @@ import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.SeparatorMenuItem;
+import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.*;
 
@@ -16,6 +17,8 @@ public class View implements EventHandler<ActionEvent> {
 	private Model model;
 	
 	private StartPanel startPanel;
+	
+	Image icon = new Image(getClass().getResourceAsStream("icon.png"));
 	
 	View(Model model, Stage stage) {
 		this.model = model;
@@ -33,6 +36,8 @@ public class View implements EventHandler<ActionEvent> {
 		Scene scene = new Scene(root);
 		stage.setScene(scene);
 		stage.setTitle("Chess");
+		stage.setResizable(false);
+		stage.getIcons().add(icon);
 		stage.show();
 		
 	}
