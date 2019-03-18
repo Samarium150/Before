@@ -28,14 +28,14 @@ public class ChessBoardPanel extends GridPane{
 		String colour_white = "-fx-background-color:#FFFFFF; -fx-border-color:#FFFFFF"
 				+ ";-fx-border-radius: 0, 0, 0, 0;";
 		
-		//Image white_pawn = new Image(getClass().getResourceAsStream());
+		Image white_pawn = new Image(getClass().getResourceAsStream("white_pawn.png"));
 		Image white_rook = new Image(getClass().getResourceAsStream("white_rook.png"));
 		Image white_knight = new Image(getClass().getResourceAsStream("white_knight.png"));
 		//Image white_bishop = new Image(getClass().getResourceAsStream());
 		//Image white_queen = new Image(getClass().getResourceAsStream());
 		//Image white_king = new Image(getClass().getResourceAsStream());
 		
-		//Image black_pawn = new Image(getClass().getResourceAsStream());
+		Image black_pawn = new Image(getClass().getResourceAsStream("black_pawn.png"));
 		Image black_rook = new Image(getClass().getResourceAsStream("black_rook.png"));
 		Image black_knight = new Image(getClass().getResourceAsStream("black_knight.png"));
 		//Image black_bishop = new Image(getClass().getResourceAsStream());
@@ -81,13 +81,21 @@ public class ChessBoardPanel extends GridPane{
 			
 		}
 		
+		for(int i = 0; i<8; i++) {
+			button[1][i].setGraphic(new ImageView(black_pawn));
+		}
+		
 		button[0][0].setGraphic(new ImageView(black_rook));
 		button[0][1].setGraphic(new ImageView(black_knight));
 		button[0][7].setGraphic(new ImageView(black_rook));
 		button[0][6].setGraphic(new ImageView(black_knight));
 		
 		
-
+		
+		for(int i = 0; i<8; i++) {
+			button[6][i].setGraphic(new ImageView(white_pawn));
+		}
+		
 		button[7][0].setGraphic(new ImageView(white_rook));
 		button[7][1].setGraphic(new ImageView(white_knight));
 		button[7][7].setGraphic(new ImageView(white_rook));
