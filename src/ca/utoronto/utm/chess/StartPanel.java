@@ -39,7 +39,6 @@ public class StartPanel extends StackPane {
 		this.getChildren().add(label);
 		this.setAlignment(label, Pos.CENTER);
 
-		
 	}
 
 }
