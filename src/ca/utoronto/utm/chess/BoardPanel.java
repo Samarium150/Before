@@ -7,7 +7,7 @@ import javafx.scene.canvas.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
-// You may use different Pane
+// You may use different Panes
 public class BoardPanel extends AnchorPane implements Observer, EventHandler<MouseEvent> {
 	private Model model;
 	private Canvas canvas;
