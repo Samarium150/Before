@@ -132,7 +132,7 @@ public class ChessBoardPanel extends GridPane{
 		button[7][6].setId("white_knight" + " " + 7 + " " + 6);
 		button[7][7].setId("white_rook" + " " + 7 + " " + 7);
 		
-		
+		/*
 		for(int i = 0; i < 8; i++) {
 			for(int j = 0; j < 8; j++) {
 				
@@ -140,41 +140,44 @@ public class ChessBoardPanel extends GridPane{
 			}
 			System.out.println();
 		}
+		*/
 		
 	}
 	
 	public void setImg(int x, int y, String piece) {
 		Image img = null;
 		
-		if(piece == "white_pawn") {
+		
+		if(piece.equals("white_pawn")) {
 			img = white_pawn;
-		}else if(piece == "white_rook"){
+		}else if(piece.equals("white_rook")){
 			img = white_rook;
-		}else if(piece == "white_knight"){
+		}else if(piece.equals("white_knight")){
 			img = white_knight;
-		}else if(piece == "white_bishop"){
+		}else if(piece.equals("white_bishop")){
 			img = white_bishop;
-		}else if(piece == "white_queen"){
+		}else if(piece.equals("white_queen")){
 			img = white_queen;
-		}else if(piece == "white_king"){
+		}else if(piece.equals("white_king")){
 			img = white_king;
 		}
 		
-		if(piece == "black_pawn") {
+		if(piece.equals("black_pawn")) {
 			img = black_pawn;
-		}else if(piece == "black_rook"){
+		}else if(piece.equals("black_rook")){
 			img = black_rook;
-		}else if(piece == "black_knight"){
+		}else if(piece.equals("black_knight")){
 			img = black_knight;
-		}else if(piece == "black_bishop"){
-			img = black_bishop;
-		}else if(piece == "black_queen"){
+		}else if(piece.equals("black_bishop")){
+			img = black_bishop; 
+		}else if(piece.equals("black_queen")){
 			img = black_queen;
-		}else if(piece == "black_king"){
+		}else if(piece.equals("black_king")){
 			img = black_king;
 		}
-		
+
 		button[x][y].setGraphic(new ImageView(img));
+		button[x][y].setId(piece + " " + x + " " + y);
 	}
 
 
