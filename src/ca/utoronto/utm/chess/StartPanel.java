@@ -30,6 +30,15 @@ public class StartPanel extends StackPane {
 		//button.setOnAction(new StartPanelEventHandler(this.view));
 		this.getChildren().add(button);
 		this.setAlignment(button, Pos.BOTTOM_CENTER);
+		
+
+		Button button2 = new Button("Mulitplayer");
+		button2.setMinWidth(100);
+		button2.setPrefHeight(50);
+		button2.setOnAction(new StartPanelEventHandler(this.view));
+		//button.setOnAction(new StartPanelEventHandler(this.view));
+		this.getChildren().add(button2);
+		this.setAlignment(button2, Pos.BOTTOM_RIGHT);
 
 		Label label = new Label();
 		label.setMinWidth(200);
