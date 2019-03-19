@@ -13,10 +13,10 @@ public class ChessBoardPanelEventHandler implements EventHandler<ActionEvent>{
 	static int prev_x = 0;
 	static int prev_y = 0;
 	View view;
-	BoardFactory board = new RegularBoard();
-	
+	BoardFactory board;
 
-	public ChessBoardPanelEventHandler(View view) {
+	public ChessBoardPanelEventHandler(View view, BoardFactory board) {
+		this.board = board;
 		this.view = view;
 	}
 	
@@ -32,9 +32,6 @@ public class ChessBoardPanelEventHandler implements EventHandler<ActionEvent>{
 		int piece_y = Integer.parseInt(piece_parts[2]);
 		int now = piece_y + piece_x * 8;
 		int pre = prev_y + prev_x * 8;
-		System.out.println(String.format("%d %d = %d", piece_x, piece_y, now));
-		PieceFactory pi = board.getPiece(now);
-		System.out.println(pi);
 		
 		if (piece_name.equals("NULL") && prev_piece.equals("")) return;
 		if (prev_piece.equals("")) {
@@ -44,12 +41,13 @@ public class ChessBoardPanelEventHandler implements EventHandler<ActionEvent>{
 			button.setGraphic(null);
 			button.setId("NULL" + " " + piece_x + " " + piece_y);
 		} else {
-			// TODO: (when the move is valid)
 			if (board.getPiece(pre).move(now)) {
 				this.view.chessBoardPanel.setImg(piece_x, piece_y, prev_piece);
-				System.out.println(board);
-				prev_piece = "";
 			}
+			else {
+				this.view.chessBoardPanel.setImg(prev_x, prev_y, prev_piece);
+			}
+			prev_piece = "";
 		}
 	}
 

@@ -14,6 +14,7 @@ import javafx.scene.paint.Color;
 public class ChessBoardPanel extends GridPane{
 	protected Canvas canvas;
 	protected View view;
+	protected BoardFactory board = new RegularBoard();
 
 	private Button[][] button = new Button[8][8];
 	
@@ -61,7 +62,7 @@ public class ChessBoardPanel extends GridPane{
 				button[i][j].setMinWidth(50);
 				button[i][j].setMinHeight(50);
 				button[i][j].setId("NULL" + " " + i + " " + j);
-				button[i][j].setOnAction(new ChessBoardPanelEventHandler(this.view));
+				button[i][j].setOnAction(new ChessBoardPanelEventHandler(this.view, board));
 				
 				if(count%2 == 0) {
 					button[i][j].setStyle(colour_white);

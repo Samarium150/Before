@@ -113,12 +113,9 @@ public class View implements EventHandler<ActionEvent> {
 		// Another menu for Edit
 
 		menu = new Menu("Rules");
-
-
+		
 		menuBar.getMenus().add(menu);
-
-
-
+		
 		return menuBar;
 	}
 	@Override
