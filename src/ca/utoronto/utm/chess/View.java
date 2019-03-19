@@ -68,22 +68,26 @@ public class View implements EventHandler<ActionEvent> {
 		menuItem = new MenuItem("ONE");
 		menuItem.setId("New Game");
 		menuItem.setDisable(true); // disables button
+		menuItem.setOnAction(new ViewEventHandler(this));
 		menu.getItems().add(menuItem);
 
 		menuItem = new MenuItem("TWO");
 		menuItem.setId("TWO");
 		menuItem.setDisable(true); // disables button
+		menuItem.setOnAction(new ViewEventHandler(this));
 		menu.getItems().add(menuItem);
 
 		menuItem = new MenuItem("THREE");
 		menuItem.setId("THREE");
 		menuItem.setDisable(true); // disables button
+		menuItem.setOnAction(new ViewEventHandler(this));
 		menu.getItems().add(menuItem);
 
 		menu.getItems().add(new SeparatorMenuItem());
 
 		menuItem = new MenuItem("Quit");
 		menuItem.setId("Quit");
+		menuItem.setOnAction(new ViewEventHandler(this));
 		menu.getItems().add(menuItem);
 
 		menuBar.getMenus().add(menu);		
@@ -96,6 +100,7 @@ public class View implements EventHandler<ActionEvent> {
 		menuItem = new MenuItem("ONE");
 		menuItem.setId("ONE");
 		menuItem.setDisable(true); // disables button
+		menuItem.setOnAction(new ViewEventHandler(this));
 		menu.getItems().add(menuItem);
 
 		menuItem = new MenuItem("TWO");
@@ -106,13 +111,10 @@ public class View implements EventHandler<ActionEvent> {
 		menuItem = new MenuItem("THREE");
 		menuItem.setId("THREE");
 		menuItem.setDisable(true); // disables button
+		menuItem.setOnAction(new ViewEventHandler(this));
 		menu.getItems().add(menuItem);
 
 		menuBar.getMenus().add(menu);
-
-		// Another menu for Edit
-
-		menu = new Menu("Rules");
 
 
 		menuBar.getMenus().add(menu);
