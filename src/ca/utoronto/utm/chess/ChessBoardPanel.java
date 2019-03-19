@@ -1,6 +1,7 @@
 package ca.utoronto.utm.chess;
 
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.geometry.Pos;
@@ -48,7 +49,11 @@ public class ChessBoardPanel extends GridPane{
 		this.canvas = new Canvas(75, 75);
 		this.getChildren().add(this.canvas);
 		this.setStyle("-fx-background-color: pink");
-
+		
+		
+		Label turn_label = new Label("white team");
+		turn_label.setMinWidth(15);
+		this.add(turn_label, 0, 0);
 		
 		int row = 1;
 		int col = 1;
@@ -56,13 +61,12 @@ public class ChessBoardPanel extends GridPane{
 		this.setVgap(0);
 		for(int i = 0; i < 8; i++) {
 			for(int j = 0; j < 8; j++) {
-				//button[i][j] = new Button(i + ":" + j);
 				button[i][j] = new Button();
 				button[i][j].setLineSpacing(1);
 				button[i][j].setMinWidth(50);
 				button[i][j].setMinHeight(50);
 				button[i][j].setId("NULL" + " " + i + " " + j);
-				button[i][j].setOnAction(new ChessBoardPanelEventHandler(this.view, board));
+				button[i][j].setOnAction(new ChessBoardPanelEventHandler(this.view, board, turn_label));
 				
 				if(count%2 == 0) {
 					button[i][j].setStyle(colour_white);

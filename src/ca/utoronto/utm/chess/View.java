@@ -14,7 +14,7 @@ import javafx.stage.*;
 public class View{
 	
 	private Stage stage;
-	private Model model;
+
 	
 
 	ChessBoardPanel chessBoardPanel;
@@ -26,8 +26,8 @@ public class View{
 	BorderPane root = new BorderPane();
 
 	
-	View(Model model, Stage stage) {
-		this.model = model;
+	View(Stage stage) {
+		
 		this.stage = stage;
 		this.initUI(stage); 
 	}
