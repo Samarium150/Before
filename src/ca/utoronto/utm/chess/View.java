@@ -116,11 +116,6 @@ public class View implements EventHandler<ActionEvent> {
 
 		menuBar.getMenus().add(menu);
 
-
-		menuBar.getMenus().add(menu);
-
-
-
 		return menuBar;
 	}
 	@Override
@@ -129,7 +124,10 @@ public class View implements EventHandler<ActionEvent> {
 	}
 
 	public void changeToBoard() {
-		this.root.setCenter(this.chessBoardPanel);
-		
+		this.root.setCenter(this.chessBoardPanel);	
+	}
+	
+	public void changeToStart() {
+		this.root.setCenter(this.startPanel);	
 	}
 }
