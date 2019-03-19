@@ -2,6 +2,7 @@ package ca.utoronto.utm.chess;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -13,9 +14,15 @@ import javafx.scene.layout.StackPane;
 public class MultiplayerPanel extends FlowPane {
 	
 	View view;
+	protected Canvas canvas;
 	
 	public MultiplayerPanel(View view) {
+		
+		
 		this.view = view;
+		this.canvas = new Canvas(75, 75);
+		this.getChildren().add(this.canvas);
+		this.setStyle("-fx-background-color: pink");
 		
 		HBox pane = new HBox(5);
 		pane.setPadding(new Insets(10));
