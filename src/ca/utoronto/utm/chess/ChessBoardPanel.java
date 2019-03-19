@@ -61,7 +61,6 @@ public class ChessBoardPanel extends GridPane{
 		this.setVgap(0);
 		for(int i = 0; i < 8; i++) {
 			for(int j = 0; j < 8; j++) {
-				//button[i][j] = new Button(i + ":" + j);
 				button[i][j] = new Button();
 				button[i][j].setLineSpacing(1);
 				button[i][j].setMinWidth(50);
