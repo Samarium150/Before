@@ -2,6 +2,7 @@ package ca.utoronto.utm.chess;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.control.MenuItem;
 
 public class ViewEventHandler implements EventHandler<ActionEvent>{
 	
@@ -13,7 +14,12 @@ public class ViewEventHandler implements EventHandler<ActionEvent>{
 
 	@Override
 	public void handle(ActionEvent event) {
-		System.out.println("I see you");
+
+		String command = ((MenuItem) event.getSource()).getId();
+		
+		if (command.equals("Quit")) {
+			this.view.changeToStart();
+		}
 		
 	}
 
