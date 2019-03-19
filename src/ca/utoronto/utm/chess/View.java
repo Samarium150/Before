@@ -76,7 +76,6 @@ public class View{
 		//menuItem.setDisable(true); // disables button
 		menuItem.setOnAction(new ViewEventHandler(this));
 		menu.getItems().add(menuItem);
-
 		menuItem = new MenuItem("Main Menu");
 		menuItem.setId("Main Menu");
 		menuItem.setOnAction(new ViewEventHandler(this));

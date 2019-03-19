@@ -12,9 +12,9 @@ public class Pawn extends PieceFactory{
 
 	@Override
 	public ArrayList<Integer> possibleMoves() {
-		int curr = this.board.getPieceLocation(this.id); //pawns current position
-		ArrayList<Integer> moves =  new ArrayList<Integer>(); //all posible moves
-		int sign = (board.getPieceOwner(this.id) == 1)? 1: -1; //1 for white, -1 for black
+		int curr = this.board.getPieceLocation(this.id);
+		ArrayList<Integer> moves =  new ArrayList<Integer>();
+		int sign = (board.getPieceOwner(this.id) == 1)? 1: -1;
 		
 		if(board.spotIsValid(curr+sign*8)) moves.add(curr+sign*8);
 		
