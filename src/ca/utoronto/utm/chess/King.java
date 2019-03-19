@@ -9,7 +9,6 @@ public class King extends PieceFactory{
 		this.board = board;
 		this.id = id;
 	}
-	
 
 	@Override
 	public ArrayList<Integer> possibleMoves() {
