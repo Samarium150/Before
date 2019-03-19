@@ -10,11 +10,12 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 
+
 public class ChessBoardPanel extends GridPane{
 	protected Canvas canvas;
 	protected View view;
 
-	Button[][] button = new Button[8][8];
+	private Button[][] button = new Button[8][8];
 	
 	Image white_pawn = new Image(getClass().getResourceAsStream("white_pawn.png"));
 	Image white_rook = new Image(getClass().getResourceAsStream("white_rook.png"));
@@ -30,8 +31,6 @@ public class ChessBoardPanel extends GridPane{
 	Image black_queen = new Image(getClass().getResourceAsStream("black_queen.png"));
 	Image black_king = new Image(getClass().getResourceAsStream("black_king1.png"));
 
-	
-	
 	
 	public ChessBoardPanel(View view) {
 		//String colour_black = "-fx-background-color:#111111;";	
@@ -70,7 +69,6 @@ public class ChessBoardPanel extends GridPane{
 					button[i][j].setStyle(colour_gray);
 				}
 				
-				
 				this.add(button[i][j], col, row);
 				
 				count++;
@@ -104,9 +102,6 @@ public class ChessBoardPanel extends GridPane{
 		button[0][5].setId("black_bishop" + " " + 0 + " " + 5);
 		button[0][6].setId("black_knight" + " " + 0 + " " + 6);
 		button[0][7].setId("black_rook" + " " + 0 + " " + 7);
-		
-		
-		
 		
 		for(int i = 0; i<8; i++) {
 			button[6][i].setGraphic(new ImageView(white_pawn));
@@ -146,7 +141,6 @@ public class ChessBoardPanel extends GridPane{
 	public void setImg(int x, int y, String piece) {
 		Image img = null;
 		
-		
 		if(piece.equals("white_pawn")) {
 			img = white_pawn;
 		}else if(piece.equals("white_rook")){
@@ -178,6 +172,4 @@ public class ChessBoardPanel extends GridPane{
 		button[x][y].setGraphic(new ImageView(img));
 		button[x][y].setId(piece + " " + x + " " + y);
 	}
-
-
 }
