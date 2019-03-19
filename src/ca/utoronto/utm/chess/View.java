@@ -126,6 +126,7 @@ public class View implements EventHandler<ActionEvent> {
 	@Override
 	public void handle(ActionEvent event) {
 		// TODO: handle the event on View, like menus
+		
 	}
 
 	public void changeToBoard() {
