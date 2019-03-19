@@ -6,7 +6,6 @@ import javafx.stage.Stage;
 
 public class Play extends Application{
 	
-	private Model model;
 	private View view;
 
 	public static void main(String[] args) {
@@ -15,7 +14,6 @@ public class Play extends Application{
 	
 	@Override
 	public void start(Stage stage) throws Exception {
-		this.model = new Model();
-		this.view = new View(model, stage);
+		this.view = new View(stage);
 	}
 }
