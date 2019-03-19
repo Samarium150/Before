@@ -77,18 +77,19 @@ public class View implements EventHandler<ActionEvent> {
 		menuItem.setOnAction(new ViewEventHandler(this));
 		menu.getItems().add(menuItem);
 
-		menuItem = new MenuItem("THREE");
-		menuItem.setId("THREE");
-		menuItem.setDisable(true); // disables button
-		menuItem.setOnAction(new ViewEventHandler(this));
-		menu.getItems().add(menuItem);
-
-		menu.getItems().add(new SeparatorMenuItem());
-
 		menuItem = new MenuItem("Quit");
 		menuItem.setId("Quit");
 		menuItem.setOnAction(new ViewEventHandler(this));
 		menu.getItems().add(menuItem);
+		
+		menu.getItems().add(new SeparatorMenuItem());
+		
+		menuItem = new MenuItem("Exit");
+		menuItem.setId("Exit");
+		//menuItem.setDisable(true); // disables button
+		menuItem.setOnAction(new ViewEventHandler(this));
+		menu.getItems().add(menuItem);
+
 
 		menuBar.getMenus().add(menu);		
 		
