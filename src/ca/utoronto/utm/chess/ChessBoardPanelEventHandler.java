@@ -33,7 +33,9 @@ public class ChessBoardPanelEventHandler implements EventHandler<ActionEvent>{
 		int now = piece_y + piece_x * 8;
 		int pre = prev_y + prev_x * 8;
 		
+		
 		if (piece_name.equals("NULL") && prev_piece.equals("")) return;
+		
 		if (prev_piece.equals("")) {
 			prev_piece = piece_name;
 			prev_x = piece_x;
@@ -41,6 +43,16 @@ public class ChessBoardPanelEventHandler implements EventHandler<ActionEvent>{
 			button.setGraphic(null);
 			button.setId("NULL" + " " + piece_x + " " + piece_y);
 		} else {
+
+			System.out.println(prev_piece + "   " + piece_name);
+			String prev_colour = prev_piece.substring(0, 3);
+			String curr_colour = piece_name.substring(0, 3);
+			if (prev_colour.equals(curr_colour)) {
+				this.view.chessBoardPanel.setImg(prev_x, prev_y, prev_piece);
+				prev_piece = "";
+				return;
+			}
+			
 			if (board.getPiece(pre).move(now)) {
 				this.view.chessBoardPanel.setImg(piece_x, piece_y, prev_piece);
 			}
