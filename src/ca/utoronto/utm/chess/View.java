@@ -77,8 +77,8 @@ public class View{
 		menuItem.setOnAction(new ViewEventHandler(this));
 		menu.getItems().add(menuItem);
 
-		menuItem = new MenuItem("Quit");
-		menuItem.setId("Quit");
+		menuItem = new MenuItem("Main Menu");
+		menuItem.setId("Main Menu");
 		menuItem.setOnAction(new ViewEventHandler(this));
 		menu.getItems().add(menuItem);
 		

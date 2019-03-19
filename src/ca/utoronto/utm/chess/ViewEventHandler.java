@@ -27,7 +27,7 @@ public class ViewEventHandler implements EventHandler<ActionEvent>{
 	        alert.setHeaderText("The Game of Chess");
 	        alert.setContentText("THIS IS HOW YOU PLAY");
 	        alert.showAndWait();
-		}else if (command.equals("Quit")) {
+		}else if (command.equals("Main Menu")) {
 			this.view.createNewGame();
 			this.view.changeToStart();
 		}else if(command.equals("Exit")){
