@@ -65,15 +65,15 @@ public class View implements EventHandler<ActionEvent> {
 
 		menu = new Menu("Game");
 
-		menuItem = new MenuItem("ONE");
+		menuItem = new MenuItem("New Game");
 		menuItem.setId("New Game");
-		menuItem.setDisable(true); // disables button
+		//menuItem.setDisable(true); // disables button
 		menuItem.setOnAction(new ViewEventHandler(this));
 		menu.getItems().add(menuItem);
 
-		menuItem = new MenuItem("TWO");
-		menuItem.setId("TWO");
-		menuItem.setDisable(true); // disables button
+		menuItem = new MenuItem("Help");
+		menuItem.setId("Help");
+		//menuItem.setDisable(true); // disables button
 		menuItem.setOnAction(new ViewEventHandler(this));
 		menu.getItems().add(menuItem);
 
@@ -92,7 +92,7 @@ public class View implements EventHandler<ActionEvent> {
 
 		menuBar.getMenus().add(menu);		
 		
-		
+/*
 		//Creates a new menu for the settings option
 
 		menu = new Menu("Settings");
@@ -115,7 +115,7 @@ public class View implements EventHandler<ActionEvent> {
 		menu.getItems().add(menuItem);
 
 		menuBar.getMenus().add(menu);
-
+*/
 		return menuBar;
 	}
 	@Override
@@ -124,6 +124,11 @@ public class View implements EventHandler<ActionEvent> {
 	}
 
 	public void changeToBoard() {
+		this.root.setCenter(this.chessBoardPanel);	
+	}
+	
+	public void createNewGame() {
+		this.chessBoardPanel = new ChessBoardPanel(this);
 		this.root.setCenter(this.chessBoardPanel);	
 	}
 	
