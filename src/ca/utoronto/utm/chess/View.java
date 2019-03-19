@@ -11,7 +11,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.*;
 
 
-public class View implements EventHandler<ActionEvent> {
+public class View{
 	
 	private Stage stage;
 	private Model model;
@@ -93,35 +93,7 @@ public class View implements EventHandler<ActionEvent> {
 
 		menuBar.getMenus().add(menu);		
 		
-/*
-		//Creates a new menu for the settings option
-
-		menu = new Menu("Settings");
-
-		menuItem = new MenuItem("ONE");
-		menuItem.setId("ONE");
-		menuItem.setDisable(true); // disables button
-		menuItem.setOnAction(new ViewEventHandler(this));
-		menu.getItems().add(menuItem);
-
-		menuItem = new MenuItem("TWO");
-		menuItem.setId("TWO");
-		menuItem.setDisable(true); // disables button
-		menu.getItems().add(menuItem);
-
-		menuItem = new MenuItem("THREE");
-		menuItem.setId("THREE");
-		menuItem.setDisable(true); // disables button
-		menuItem.setOnAction(new ViewEventHandler(this));
-		menu.getItems().add(menuItem);
-
-		menuBar.getMenus().add(menu);
-*/
 		return menuBar;
-	}
-	@Override
-	public void handle(ActionEvent event) {
-		// TODO: handle the event on View, like menus
 	}
 
 	public void changeToBoard() {
