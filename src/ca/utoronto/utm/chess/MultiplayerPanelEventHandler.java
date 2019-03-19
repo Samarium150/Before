@@ -4,6 +4,8 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
@@ -13,6 +15,7 @@ public class MultiplayerPanelEventHandler implements EventHandler<ActionEvent> {
 	View view;  
 	TextField text1;
 	TextField text2;
+	Image warning = new Image(getClass().getResourceAsStream("warning.png"));
 	
 	public MultiplayerPanelEventHandler(View view, TextField text1,TextField text2) {
 		this.view = view;
@@ -35,6 +38,7 @@ public class MultiplayerPanelEventHandler implements EventHandler<ActionEvent> {
 	        alert.setHeaderText("Connection instructions");
 	        alert.setContentText("To connect please type the IP address into the first box and "
 	        		+ "then the port number into the second box.");
+	        alert.setGraphic(new ImageView(warning));
 	        alert.showAndWait();
 		}else {
 			System.out.println(this.text1.getText());
