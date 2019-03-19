@@ -9,7 +9,6 @@ public class King extends PieceFactory{
 		this.board = board;
 		this.id = id;
 	}
-	
 
 	@Override
 	public ArrayList<Integer> possibleMoves() {
@@ -21,6 +20,10 @@ public class King extends PieceFactory{
 		if(!isInArray(excludeRight,curr)) moves.add(curr+1);
 		moves.add(curr-8);
 		moves.add(curr+8);
+		moves.add(curr-7);
+		moves.add(curr+9);
+		moves.add(curr-9);
+		moves.add(curr+7);
 		return movesFilter(moves);
 	}
 	
