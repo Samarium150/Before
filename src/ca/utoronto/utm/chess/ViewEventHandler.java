@@ -32,8 +32,7 @@ public class ViewEventHandler implements EventHandler<ActionEvent>{
 			this.view.changeToStart();
 		}else if(command.equals("Exit")){
 			System.exit(0);
-		}
-		
+		}	
 	}
 
 }
