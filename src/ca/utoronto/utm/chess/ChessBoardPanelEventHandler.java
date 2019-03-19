@@ -39,7 +39,6 @@ public class ChessBoardPanelEventHandler implements EventHandler<ActionEvent>{
 		
 		String current_turn = this.turn_label.getText();
 		
-		System.out.println(current_turn + "   " + piece_name);
 		
 		if (piece_name.substring(0,1).equals(current_turn.substring(0, 1)) == false&& prev_piece.equals("")) {
 			return;
@@ -58,7 +57,6 @@ public class ChessBoardPanelEventHandler implements EventHandler<ActionEvent>{
 			button.setId("NULL" + " " + piece_x + " " + piece_y);
 		} else {
 
-			System.out.println(prev_piece + "   " + piece_name);
 			String prev_colour = prev_piece.substring(0, 3);
 			String curr_colour = piece_name.substring(0, 3);
 			if (prev_colour.equals(curr_colour)) {
@@ -69,17 +67,16 @@ public class ChessBoardPanelEventHandler implements EventHandler<ActionEvent>{
 			
 			if (board.getPiece(pre).move(now)) {
 				this.view.chessBoardPanel.setImg(piece_x, piece_y, prev_piece);
-			}
-			else {
+				if("w".equals(current_turn.substring(0, 1))) {
+					turn_label.setText("black team");
+				}else {
+					turn_label.setText("white team");
+				}
+			}else {
 				this.view.chessBoardPanel.setImg(prev_x, prev_y, prev_piece);
 			}
 			prev_piece = "";
 			
-			if("w".equals(current_turn.substring(0, 1))) {
-				turn_label.setText("black team");
-			}else {
-				turn_label.setText("white team");
-			}
 			
 		}
 	}
