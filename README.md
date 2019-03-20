@@ -16,7 +16,9 @@ We've created the base game of chess with the framework for modification and ext
 
 ## Screenshots
 <a href="#">[To Top]</a>
-![Screen 1](https://i.imgur.com/xjdCBks.png) ![Screen 2](https://i.imgur.com/yThzNwr.png)
+| ![Screen 1](https://i.imgur.com/xjdCBks.png) |
+|----------|
+| ![Screen 2](https://i.imgur.com/yThzNwr.png) |
 ## Game Features
 <a href="#">[To Top]</a>
 ### Rules
