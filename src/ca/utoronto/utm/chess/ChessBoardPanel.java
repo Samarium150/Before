@@ -131,16 +131,6 @@ public class ChessBoardPanel extends GridPane{
 		button[7][6].setId("white_knight" + " " + 7 + " " + 6);
 		button[7][7].setId("white_rook" + " " + 7 + " " + 7);
 		
-		/*
-		for(int i = 0; i < 8; i++) {
-			for(int j = 0; j < 8; j++) {
-				
-				System.out.print(button[i][j].getId() + " ");
-			}
-			System.out.println();
-		}
-		*/
-		
 	}
 	
 	public void setImg(int x, int y, String piece) {

@@ -51,9 +51,11 @@ public abstract class BoardFactory {
 			location[squareNum] = new None();
 			for(int i = 0; i < p1.size(); i++) {
 				if (p1.get(i).id == id) p1.remove(i);
+				break;
 			}
 			for(int i = 0; i < p2.size(); i++) {
 				if (p2.get(i).id == id) p2.remove(i);
+				break;
 			}
 			return true;
 		}
