@@ -40,7 +40,7 @@ Click on a piece to select it, then click on the desired square to move it to th
 
 ### Versus AI
 ## Installation
-<a href="#">[To Top]</a>
+<a href="#">[To Top]</a><br>
 To play the game download the executable .jar file and run it on your computer.
 If you want to play your game after extending or modifying it you have to export the project as a runnable .jar file:
 For [Eclipse](https://www.eclipse.org/downloads/packages/):
@@ -65,7 +65,7 @@ For [IntelliJ IDEA](https://www.jetbrains.com/idea/):
 
 
 ## Extending the Game
-<a href="#">[To Top]</a>
+<a href="#">[To Top]</a><br>
 The game is coded in Java using JavaFX, so be sure to have an editor and an IDE such as [Eclipse](https://www.eclipse.org/downloads/packages/) or [IntelliJ IDEA](https://www.jetbrains.com/idea/) if you want to extend this game for yourself.
 ### Extending the Board
 The board is an array with positions 0 to 63 with 0 being the top left of the board, 7 being top right, 56 being bottom left, and 63 being bottom right.
