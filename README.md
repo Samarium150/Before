@@ -90,4 +90,4 @@ We already checked for friendly pieces so there is no need to worry about taking
 If there are any issues, report them in the [Issue Section](https://github.com/Samarium150/Before/issues).
 ## License
 Created by Team Before under the [Apache 2.0 License](https://github.com/Samarium150/Before/blob/master/LICENSE).
-<a href="#">[To Top]</a>
+<br><a href="#">[To Top]</a>
