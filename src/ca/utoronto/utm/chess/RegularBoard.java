@@ -53,6 +53,7 @@ public class RegularBoard extends BoardFactory{
 		this.addPiece(new Pawn(this, 66), 53, 2);
 		this.addPiece(new Pawn(this, 67), 54, 2);
 		this.addPiece(new Pawn(this, 68), 55, 2);
+		//this.initializePieceLocations(); //unused
 	}
 
 	@Override

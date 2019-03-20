@@ -21,7 +21,15 @@ public abstract class BoardFactory {
 		}
 		return -1;
 	}
-	
+	//unused
+	public void initializePieceLocations() {
+		for(int i = 0; i < 64; i++) {
+			if (location[i].id != -1) {
+				location[i].possibleMoves();
+			}
+		}
+	}
+
 	/*
 	 * @id  return the input piece belongs to which player, 0 if is not found.
 	 */
