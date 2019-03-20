@@ -1,4 +1,4 @@
-# Chess - By "Before"
+# Chess - By Team Before
 ## Introduction
 We've created the base game of chess with the framework for modification and extension. New pieces can be implemented by following the documentation in the <a href="#Extend">Extending the Game</a> section.
 ## Index
@@ -8,7 +8,6 @@ We've created the base game of chess with the framework for modification and ext
 	- [Controls](#Controls)
 	- [Versus AI](#Versus-AI)
 - [Installation](#Installation)
-	- [For Windows](#For-Windows)
 - [Extending the Game](#Extending-the-Game)
 	- [Extending the Pieces](#Extending-the-Pieces)
 	- [Extending the Board](#Extending-the-Board)
@@ -16,10 +15,12 @@ We've created the base game of chess with the framework for modification and ext
 - [License](#License)
 
 ## Screenshots
-| ![Screen 1]() |
-|--------------------------------------|
-| ![Screen 2]() |
+<a href="#">[To Top]</a>
+| ![Screen 1](https://i.imgur.com/xjdCBks.png) |
+|----------------------------------------------|
+| ![Screen 2](https://i.imgur.com/yThzNwr.png) |
 ## Game Features
+<a href="#">[To Top]</a>
 ### Rules
 The rules of chess can be found <a href="https://www.chess.com/learn-how-to-play-chess">here</a> which redirects to https://www.chess.com/learn-how-to-play-chess.
 <strong>Rules we have omitted/not implemented from our game</strong>
@@ -40,7 +41,9 @@ Click on a piece to select it, then click on the desired square to move it to th
 
 ### Versus AI
 ## Installation
+<a href="#">[To Top]</a>
 ## Extending the Game
+<a href="#">[To Top]</a>
 The game is coded in Java using JavaFX, so be sure to have an editor and an IDE such as [Eclipse](https://www.eclipse.org/downloads/packages/) or [IntelliJ IDEA](https://www.jetbrains.com/idea/) if you want to extend this game for yourself.
 ### Extending the Board
 The board is an array with positions 0 to 63 with 0 being the top left of the board, 7 being top right, 56 being bottom left, and 63 being bottom right.
@@ -88,3 +91,4 @@ We already checked for friendly pieces so there is no need to worry about taking
 If there are any issues, report them in the [Issue Section](https://github.com/Samarium150/Before/issues).
 ## License
 Created by Team Before under the [Apache 2.0 License](https://github.com/Samarium150/Before/blob/master/LICENSE).
+<a href="#">[To Top]</a>
