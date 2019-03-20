@@ -41,6 +41,29 @@ Click on a piece to select it, then click on the desired square to move it to th
 ### Versus AI
 ## Installation
 <a href="#">[To Top]</a>
+To play the game download the executable .jar file and run it on your computer.
+If you want to play your game after extending or modifying it you have to export the project as a runnable .jar file:
+For [Eclipse](https://www.eclipse.org/downloads/packages/):
+<ol>
+	<li>Right click the project folder inside Eclipse -> Export</li>
+	<li>Select Java -> Runnable JAR file</li>
+	<li>Hit Next</li>
+	<li>Select the Play class as launch configuration</li>
+	<li>Choose where you want to export the JAR file to</li>
+	<li>Select Package required libraries into generated JAR (the game is small so it won't lag)</li>
+	<li>Hit Finish</li>
+	<li>Run the JAR file</li>
+</ol>
+
+For [IntelliJ IDEA](https://www.jetbrains.com/idea/):
+
+<ol>
+	<li>File -> Project Structure -> Project Settings -> Artifacts -> Click the Plus Sign -> JAR -> From modules with dependencies</li>
+	<li>Then go to Builds on the toolbar -> Build Artifact -> Build</li>
+	<li>Run the JAR file</li>
+</ol>
+
+
 ## Extending the Game
 <a href="#">[To Top]</a>
 The game is coded in Java using JavaFX, so be sure to have an editor and an IDE such as [Eclipse](https://www.eclipse.org/downloads/packages/) or [IntelliJ IDEA](https://www.jetbrains.com/idea/) if you want to extend this game for yourself.
