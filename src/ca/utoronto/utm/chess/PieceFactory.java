@@ -17,9 +17,12 @@ public abstract class PieceFactory {
 			if ( (moves.get(i) < 0 || moves.get(i) >= board.getOverallLocation().length) || board.getSquareOwner(moves.get(i)) == board.getPieceOwner(this.id))  {
 				moves.remove(i);
 				i--;
+				//these lines broke the game.
+				/*
 				if (board.getSquareOwner(moves.get(i)) == board.getPieceOwner(this.id)) {
 					//break;
 				}
+				*/
 			}
 		}
 		return moves;
