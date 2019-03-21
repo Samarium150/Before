@@ -17,6 +17,7 @@ public class ViewEventHandler implements EventHandler<ActionEvent>{
 		this.view = view;
 	}
 
+	
 	@Override
 	public void handle(ActionEvent event) {
 		String command = ((MenuItem) event.getSource()).getId();
