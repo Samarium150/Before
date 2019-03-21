@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Rook extends PieceFactory{
 	
-	public Rook(BoardFactory board, int id) {
+	Rook(BoardFactory board, int id) {
 		this.board = board;
 		this.id = id;
 	}
@@ -19,9 +19,6 @@ public class Rook extends PieceFactory{
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
 		return "R";
 	}
-	
-
 }

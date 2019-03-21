@@ -5,15 +5,15 @@ import java.util.ArrayList;
 
 public abstract class BoardFactory {
 	
-	protected PieceFactory[] location; // I decide to use a single rather than 2D is for general cases.
-	protected ArrayList<PieceFactory> p1 = new ArrayList<>() , p2 = new ArrayList<>(); 
+	PieceFactory[] location; // I decide to use a single rather than 2D is for general cases.
+	ArrayList<PieceFactory> p1 = new ArrayList<>() , p2 = new ArrayList<>();
 	public abstract String getSquareNums();
 	public abstract String toString();
 	
 	/*
 	 * @id  return the num of the square located, or -1 is not found
 	 */
-	public int getPieceLocation(int id) {
+	int getPieceLocation(int id) {
 		for(int i = 0; i < location.length; i++) {
 			if (location[i].id == id) {
 				return i;
@@ -33,7 +33,7 @@ public abstract class BoardFactory {
 	/*
 	 * @id  return the input piece belongs to which player, 0 if is not found.
 	 */
-	public int getPieceOwner(int id) {
+	int getPieceOwner(int id) {
 		for(PieceFactory p : p1) {
 			if (p.id == id) {
 				return 1;
@@ -46,15 +46,15 @@ public abstract class BoardFactory {
 		}
 		return -1;
 	}
-	public PieceFactory[] getOverallLocation() {return location;}
+	PieceFactory[] getOverallLocation() {return location;}
 	
 	
-	public PieceFactory getPiece(int squareNum) {
+	PieceFactory getPiece(int squareNum) {
 		
 		return (squareNum >= 0 && squareNum < location.length)? location[squareNum] : null;
 	}
 	
-	public boolean removePiece(int id , int squareNum) {
+	boolean removePiece(int id , int squareNum) {
 		if (location[squareNum].id != -1) {
 			location[squareNum] = new None();
 			for(int i = 0; i < p1.size(); i++) {
@@ -73,7 +73,7 @@ public abstract class BoardFactory {
 	/*
 	 * @id  return true if is successfully added, or false is invaild
 	 */
-	public boolean addPiece(PieceFactory piece, int squareNum, int player) {
+	boolean addPiece(PieceFactory piece, int squareNum, int player) {
 		if (this.spotIsValid(squareNum)) {
 			location[squareNum] = piece;
 			if (player == 1) {
@@ -89,7 +89,7 @@ public abstract class BoardFactory {
 	}
 
 	
-	public boolean spotIsValid(int squareNum) {
+	boolean spotIsValid(int squareNum) {
 		return squareNum >= 0 &&  squareNum < location.length && (location[squareNum].id == -1);
 	}
 
@@ -105,7 +105,7 @@ public abstract class BoardFactory {
 	/*
 	 * replace all empty spot with None
 	 */
-	public void initializeBoard() {
+	void initializeBoard() {
 		for (int i = 0; i < location.length; i++) {
 			location[i] = new None();
 		}
@@ -114,7 +114,7 @@ public abstract class BoardFactory {
 	/*
 	 * return the owner of this square, -1 if is failed, 0 if is None.
 	 */
-	public int getSquareOwner(int squareNum) {
+	int getSquareOwner(int squareNum) {
 		if(squareNum < 0 || squareNum >= location.length) return -1;
 		if(location[squareNum].getOwner() >= 1) return location[squareNum].getOwner();
 		return 0;

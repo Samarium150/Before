@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class King extends PieceFactory{
 
-	public King(BoardFactory board, int id) {
+	King(BoardFactory board, int id) {
 		this.board = board;
 		this.id = id;
 	}
@@ -38,5 +38,4 @@ public class King extends PieceFactory{
 	public String toString() {
 		return "K";
 	}
-	
 }

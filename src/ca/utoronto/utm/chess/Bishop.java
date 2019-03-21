@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Bishop extends PieceFactory{
 	
-	public Bishop(BoardFactory board, int id) {
+	Bishop(BoardFactory board, int id) {
 		this.board = board;
 		this.id = id;
 	}
@@ -21,5 +21,4 @@ public class Bishop extends PieceFactory{
 	public String toString() {
 		return "B";
 	}
-
 }

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class None extends PieceFactory{
 	
-	public None () {
+	None () {
 		this.id = -1;
 	}
 	
@@ -23,5 +23,4 @@ public class None extends PieceFactory{
 	}
 	
 	public int getOwner() {return 0;}
-
 }

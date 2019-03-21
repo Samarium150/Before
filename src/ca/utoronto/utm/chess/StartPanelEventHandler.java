@@ -7,7 +7,7 @@ public class StartPanelEventHandler implements EventHandler<ActionEvent>{
 	
 	View view;  
 
-	public StartPanelEventHandler(View view) {
+	StartPanelEventHandler(View view) {
 		this.view = view;
 	}
 

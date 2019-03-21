@@ -16,11 +16,19 @@ public class Pawn extends PieceFactory{
 		ArrayList<Integer> moves =  new ArrayList<Integer>(); //all posible moves
 		int sign = (board.getPieceOwner(this.id) == 1)? 1: -1; //1 for white, -1 for black
 		
+		if((8 <= curr && curr <= 15) || (48 <= curr && curr <= 55)) moves.add(curr+sign*16);
+		
 		if(board.spotIsValid(curr+sign*8)) moves.add(curr+sign*8);
 		
-		if(board.getSquareOwner(curr+sign*9) != 0 && board.getSquareOwner(curr+sign*7) != -1 && board.getSquareOwner(curr+sign*7) != board.getPieceOwner(this.id)) moves.add(curr+sign*7);
+		if(board.getSquareOwner(curr+sign*9) != 0
+				&& board.getSquareOwner(curr+sign*7) != -1
+				&& board.getSquareOwner(curr+sign*7) != board.getPieceOwner(this.id))
+			moves.add(curr+sign*7);
 		
-		if(board.getSquareOwner(curr+sign*9) != 0 && board.getSquareOwner(curr+sign*9) != -1 && board.getSquareOwner(curr+sign*9) != board.getPieceOwner(this.id)) moves.add(curr+sign*9);
+		if(board.getSquareOwner(curr+sign*9) != 0
+				&& board.getSquareOwner(curr+sign*9) != -1
+				&& board.getSquareOwner(curr+sign*9) != board.getPieceOwner(this.id))
+			moves.add(curr+sign*9);
 		
 		return movesFilter(moves);
 	}
@@ -29,5 +37,4 @@ public class Pawn extends PieceFactory{
 	public String toString() {
 		return "P";
 	}
-
 }
