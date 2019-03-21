@@ -40,19 +40,21 @@ public class ChessBoardPanelEventHandler implements EventHandler<ActionEvent>{
 		
 		String current_turn = this.turn_label.getText();
 		
+		//returns if there is friendly fire, ie black bishop attack black king
 		if (piece_name.substring(0,1).equals(current_turn.substring(0, 1)) == false
 				&& prev_piece.equals(""))
 			return;
 		
+		//returns if a player is trying to move an empty square
 		if (piece_name.equals("NULL") && prev_piece.equals("")) return;
 		
-		if (prev_piece.equals("")) {
+		if (prev_piece.equals("")) { //where the piece is coming from
 			prev_piece = piece_name;
 			prev_x = piece_x;
 			prev_y = piece_y;
 			button.setGraphic(null);
 			button.setId("NULL" + " " + piece_x + " " + piece_y);
-		} else {
+		} else { //where the piece is going
 
 			String prev_colour = prev_piece.substring(0, 3);
 			String curr_colour = piece_name.substring(0, 3);

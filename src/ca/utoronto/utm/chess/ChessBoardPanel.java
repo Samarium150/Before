@@ -55,6 +55,7 @@ public class ChessBoardPanel extends GridPane{
 		int col = 1;
 		int count = 0;
 		this.setVgap(0);
+		//adding all the squares to the board
 		for(int i = 0; i < 8; i++) {
 			for(int j = 0; j < 8; j++) {
 				button[i][j] = new Button();
@@ -81,11 +82,13 @@ public class ChessBoardPanel extends GridPane{
 			
 		}
 		
+		//assigning graphics to the black pawns
 		for(int i = 0; i<8; i++) {
 			button[1][i].setGraphic(new ImageView(black_pawn));
 			button[1][i].setId("black_pawn" + " " + 1 + " " + i);
 		}
 		
+		//assigning graphics to the black pieces that are not pawns
 		button[0][0].setGraphic(new ImageView(black_rook));
 		button[0][1].setGraphic(new ImageView(black_knight));
 		button[0][2].setGraphic(new ImageView(black_bishop));
@@ -104,11 +107,14 @@ public class ChessBoardPanel extends GridPane{
 		button[0][6].setId("black_knight" + " " + 0 + " " + 6);
 		button[0][7].setId("black_rook" + " " + 0 + " " + 7);
 		
+
+		//assigning graphics to the white pawns
 		for(int i = 0; i<8; i++) {
 			button[6][i].setGraphic(new ImageView(white_pawn));
 			button[6][i].setId("white_pawn" + " " + 6 + " " + i);
 		}
 		
+		//assigning graphics to the white pieces that are not pawns
 		button[7][0].setGraphic(new ImageView(white_rook));
 		button[7][1].setGraphic(new ImageView(white_knight));
 		button[7][2].setGraphic(new ImageView(white_bishop));
@@ -128,6 +134,9 @@ public class ChessBoardPanel extends GridPane{
 		button[7][7].setId("white_rook" + " " + 7 + " " + 7);
 	}
 	
+	/*
+	 * This function sets the button[x][y] to the desired piece
+	 */
 	void setImg(int x, int y, String piece) {
 		Image img = null;
 		
