@@ -41,8 +41,8 @@ Click on a piece to select it, then click on the desired square to move it to th
 ### Versus AI
 ## Installation
 <a href="#">[To Top]</a><br>
-To play the game download the executable .jar file and run it on your computer.
-If you want to play your game after extending or modifying it you have to export the project as a runnable .jar file:
+To play the game download the executable .JAR file in the [Rleases section](https://github.com/Samarium150/Before/releases) and run it on your computer.<br>
+If you want to play your game after extending or modifying it you have to export the project as a runnable .jar file:<br>
 For [Eclipse](https://www.eclipse.org/downloads/packages/):
 <ol>
 	<li>Right click the project folder inside Eclipse -> Export</li>
@@ -109,6 +109,24 @@ public ArrayList<Integer> possibleMoves() {
 ```
 The `possibleMoves` function returns the array `[59, 67, 51, 61, 53, 69, 52]` which indicates what indexes are possible moves.
 We already checked for friendly pieces so there is no need to worry about taking your own piece.
+
+The `ChessBoardPanel.java` class is also important for implementing custom pieces as this is where you will initialize them. This shows a snippet of the code using a white rook as an example piece.
+In this function you will need to initialize your custom piece's and position using the documentation below.
+```
+ChessBoardPanel(View view)
+	white_rook = new Image(this.getClass().getResource("/white_rook.png").toString());
+	button[7][7].setGraphic(new ImageView(white_rook));
+```
+and the function `setImg(int x, int y, String piece)` within `ChessBoardPanel` also has to be modified to include your custom piece.
+```
+void setImg(int x, int y, String piece) {
+		Image img = null;
+
+		switch (piece) {
+			case "white_rook":
+				img = white_rook;
+				break;
+```
 ## Issues
 If there are any issues, report them in the [Issue Section](https://github.com/Samarium150/Before/issues).
 ## License
