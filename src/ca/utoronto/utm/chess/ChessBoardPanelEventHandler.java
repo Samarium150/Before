@@ -64,9 +64,8 @@ public class ChessBoardPanelEventHandler implements EventHandler<ActionEvent>{
 			
 			if (board.getPiece(pre).move(now)) {
 				this.view.chessBoardPanel.setImg(piece_x, piece_y, prev_piece);
-				
-				System.out.println("PIECE " + piece_name);
-				
+
+				//This if statement determines which alert to display base on who won
 				if(piece_name.equals("white_king")) {
 					Alert alert = new Alert(AlertType.INFORMATION);
 					alert.setTitle("Winner!");
