@@ -47,7 +47,7 @@ public class ChessBoardPanel extends GridPane{
 		this.getChildren().add(this.canvas);
 		this.setStyle("-fx-background-color: pink");
 		
-		Label turn_label = new Label("white team next");
+		Label turn_label = new Label("white team");
 		turn_label.setMinWidth(15);
 		this.add(turn_label, 0, 0);
 		

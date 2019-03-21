@@ -37,7 +37,7 @@ public class ChessBoardPanelEventHandler implements EventHandler<ActionEvent>{
 		
 		String current_turn = this.turn_label.getText();
 		
-		if (piece_name.substring(0,1).equals(current_turn.substring(0, 1))
+		if (piece_name.substring(0,1).equals(current_turn.substring(0, 1)) == false
 				&& prev_piece.equals(""))
 			return;
 		
