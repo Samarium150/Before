@@ -1,10 +1,12 @@
 package ca.utoronto.utm.chess;
 
+import com.sun.deploy.util.SyncFileAccess;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.MenuItem;
+
 
 public class ViewEventHandler implements EventHandler<ActionEvent>{
 	

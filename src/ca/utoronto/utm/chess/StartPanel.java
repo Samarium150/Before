@@ -6,18 +6,18 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
 
 class StartPanel extends StackPane {
 	
 	private Canvas canvas;
 	private View view;
 	
-	Image king2 = new Image(getClass().getResourceAsStream("king2.png"));
-	
-	StartPanel(View view) {
+	StartPanel(View view) throws FileNotFoundException {
 		this.view = view;
 		this.canvas = new Canvas(475, 475);
 		this.getChildren().add(this.canvas);
@@ -35,7 +35,7 @@ class StartPanel extends StackPane {
 		label.setMinWidth(200);
 		label.setPrefHeight(100);
 		
-		label.setGraphic(new ImageView(king2));
+		label.setGraphic(new ImageView(new Image(new FileInputStream("resources/king2.png"))));
 		this.getChildren().add(label);
 		this.setAlignment(label, Pos.CENTER);
 	}

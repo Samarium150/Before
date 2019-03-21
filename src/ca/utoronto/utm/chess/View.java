@@ -9,8 +9,11 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.*;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 
-class View{
+
+class View {
 	
 	private Stage stage;
 	
@@ -18,20 +21,21 @@ class View{
 
 	private StartPanel startPanel;
 	
-	private Image icon = new Image(getClass().getResourceAsStream("icon.png"));
+	private Image icon;
 	
 	private BorderPane root = new BorderPane();
 	
-	View(Stage stage) {
+	View(Stage stage) throws FileNotFoundException{
 		this.stage = stage;
 		this.initUI(stage); 
 	}
 	
-	private void initUI(Stage stage) {
+	private void initUI(Stage stage) throws FileNotFoundException {
 
 		this.chessBoardPanel = new ChessBoardPanel(this);
 		this.startPanel = new StartPanel(this);
-
+		this.icon = new Image(new FileInputStream("resources/icon.png"));
+		
 		root.setTop(createMenuBar());
 		root.setCenter(this.startPanel);
 
@@ -84,9 +88,14 @@ class View{
 		this.root.setCenter(this.chessBoardPanel);	
 	}
 	
-	void createNewGame() {
-		this.chessBoardPanel = new ChessBoardPanel(this);
-		this.root.setCenter(this.chessBoardPanel);	
+	void createNewGame(){
+		try {
+			this.chessBoardPanel = new ChessBoardPanel(this);
+			this.root.setCenter(this.chessBoardPanel);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		
 	}
 	
 	void changeToStart() {
