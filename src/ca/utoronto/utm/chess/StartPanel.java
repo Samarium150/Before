@@ -29,11 +29,13 @@ class StartPanel extends StackPane {
 		
 		this.getChildren().add(button);
 		this.setAlignment(button, Pos.BOTTOM_CENTER);
+		
 
 		Label label = new Label();
 		label.setMinWidth(200);
 		label.setPrefHeight(100);
 		
+		//sets main picture in the middle of the screen
 		label.setGraphic(new ImageView(new Image(this.getClass().getResource("/king2.png").toString())));
 		this.getChildren().add(label);
 		this.setAlignment(label, Pos.CENTER);
