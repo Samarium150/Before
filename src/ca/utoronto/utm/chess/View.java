@@ -83,15 +83,24 @@ class View {
 		return menuBar;
 	}
 
+	/*
+	 * This function changes the screen to the game board
+	 */
 	void changeToBoard() {
 		this.root.setCenter(this.chessBoardPanel);	
 	}
 	
+	/*
+	 * This function resets the board and creates a new game
+	 */
 	void createNewGame(){
 		this.chessBoardPanel = new ChessBoardPanel(this);
 		this.root.setCenter(this.chessBoardPanel);
 	}
 	
+	/*
+	 * This function changes the screen the the main start screen
+	 */
 	void changeToStart() {
 		this.root.setCenter(this.startPanel);	
 	}

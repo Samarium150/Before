@@ -28,7 +28,8 @@ public class ViewEventHandler implements EventHandler<ActionEvent>{
 				Alert alert = new Alert(AlertType.INFORMATION);
 				alert.setTitle("Instructions");
 				alert.setHeaderText("The Game of Chess");
-				alert.setContentText("THIS IS HOW YOU PLAY");
+				alert.setContentText("For instructions, please visit us at: \n\n"
+						+ "https://github.com/Samarium150/Before/blob/master/README.md");
 				alert.showAndWait();
 				break;
 			case "Main Menu":
