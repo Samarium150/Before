@@ -10,14 +10,14 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 
-public class StartPanel extends StackPane {
+class StartPanel extends StackPane {
 	
-	protected Canvas canvas;
-	protected View view;
+	private Canvas canvas;
+	private View view;
 	
 	Image king2 = new Image(getClass().getResourceAsStream("king2.png"));
 	
-	public StartPanel(View view) {
+	StartPanel(View view) {
 		this.view = view;
 		this.canvas = new Canvas(475, 475);
 		this.getChildren().add(this.canvas);
@@ -27,14 +27,14 @@ public class StartPanel extends StackPane {
 		button.setMinWidth(100);
 		button.setPrefHeight(50);
 		button.setOnAction(new StartPanelEventHandler(this.view));
-		//button.setOnAction(new StartPanelEventHandler(this.view));
+		
 		this.getChildren().add(button);
 		this.setAlignment(button, Pos.BOTTOM_CENTER);
 
 		Label label = new Label();
 		label.setMinWidth(200);
 		label.setPrefHeight(100);
-		//label.setStyle("-fx-background-color:#111111;");
+		
 		label.setGraphic(new ImageView(king2));
 		this.getChildren().add(label);
 		this.setAlignment(label, Pos.CENTER);

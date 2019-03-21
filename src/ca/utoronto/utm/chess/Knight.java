@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Knight extends PieceFactory{
 	
-	public Knight(BoardFactory board, int id) {
+	Knight(BoardFactory board, int id) {
 		this.board = board;
 		this.id = id;
 	}
@@ -33,5 +33,4 @@ public class Knight extends PieceFactory{
 	public String toString() {
 		return "N";
 	}
-	
 }

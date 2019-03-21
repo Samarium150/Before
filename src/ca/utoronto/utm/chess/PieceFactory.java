@@ -12,7 +12,7 @@ public abstract class PieceFactory {
 	public abstract ArrayList<Integer> possibleMoves();
 	public abstract String toString();
 	
-	protected ArrayList<Integer> movesFilter(ArrayList<Integer> moves) {
+	ArrayList<Integer> movesFilter(ArrayList<Integer> moves) {
 		for(int i = 0; i < moves.size(); i++) {
 			if ( (moves.get(i) < 0 || moves.get(i) >= board.getOverallLocation().length) || board.getSquareOwner(moves.get(i)) == board.getPieceOwner(this.id))  {
 				moves.remove(i);
@@ -32,7 +32,7 @@ public abstract class PieceFactory {
 		return board.getPieceOwner(this.id);
 	}
 	
-	protected void rockOverallMovement(ArrayList<Integer> moves) {	
+	void rockOverallMovement(ArrayList<Integer> moves) {
 		int[] excludeLeftMost = {0,8,16,24,32,40,48,56};
 		int[] excludeRightMost = {7,15,23,31,39,47,55,63};
 		int[] excludeUpMost = {0,1,2,3,4,5,6,7};
@@ -41,18 +41,18 @@ public abstract class PieceFactory {
 		// downward
 		straightMovementsStrategy(moves, 8, excludeDownMost);
 		
-		//upward
+		// upward
 		straightMovementsStrategy(moves, -8, excludeUpMost);
 		
-		//upward
+		// upward
 		straightMovementsStrategy(moves, -1, excludeLeftMost);
 	
-		//upward
+		// upward
 		straightMovementsStrategy(moves, 1, excludeRightMost);
 		
 	}
 	
-	protected void bishopOverallMovement(ArrayList<Integer> moves) {	
+	void bishopOverallMovement(ArrayList<Integer> moves) {
 		
 		int[] excludeUpLeft = {8,16,24,32,40,48,56,
 							   0,1,2,3,4,5,6,7};
@@ -101,7 +101,7 @@ public abstract class PieceFactory {
 		return false;
 	}
 	
-	protected boolean isInArray(int[] array, int num) {
+	boolean isInArray(int[] array, int num) {
 		for (int n : array) {
 			if (n == num) return true;
 		}

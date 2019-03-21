@@ -2,22 +2,19 @@ package ca.utoronto.utm.chess;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 
 public class ChessBoardPanelEventHandler implements EventHandler<ActionEvent>{
 	
-	static String prev_piece = "";
-	static int prev_x = 0;
-	static int prev_y = 0;
-	View view;
-	BoardFactory board;
-	Label turn_label;
+	private static String prev_piece = "";
+	private static int prev_x = 0;
+	private static int prev_y = 0;
+	private View view;
+	private BoardFactory board;
+	private Label turn_label;
 	
-	public ChessBoardPanelEventHandler(View view, BoardFactory board, Label turn_label) {
+	ChessBoardPanelEventHandler(View view, BoardFactory board, Label turn_label) {
 		this.board = board;
 		this.view = view;
 		this.turn_label = turn_label;
@@ -25,7 +22,6 @@ public class ChessBoardPanelEventHandler implements EventHandler<ActionEvent>{
 	
 	@Override
 	public void handle(ActionEvent event) {
-		// TODO Auto-generated method stub
 		String piece = ((Button) event.getSource()).getId();
 		Button button = (Button) event.getSource();
 		
@@ -36,18 +32,13 @@ public class ChessBoardPanelEventHandler implements EventHandler<ActionEvent>{
 		int now = piece_y + piece_x * 8;
 		int pre = prev_y + prev_x * 8;
 		
-		
 		String current_turn = this.turn_label.getText();
 		
-		
-		if (piece_name.substring(0,1).equals(current_turn.substring(0, 1)) == false&& prev_piece.equals("")) {
+		if (piece_name.substring(0,1).equals(current_turn.substring(0, 1))
+				&& prev_piece.equals(""))
 			return;
-		}
-		
 		
 		if (piece_name.equals("NULL") && prev_piece.equals("")) return;
-		
-		
 		
 		if (prev_piece.equals("")) {
 			prev_piece = piece_name;
@@ -76,9 +67,6 @@ public class ChessBoardPanelEventHandler implements EventHandler<ActionEvent>{
 				this.view.chessBoardPanel.setImg(prev_x, prev_y, prev_piece);
 			}
 			prev_piece = "";
-			
-			
 		}
 	}
-
 }

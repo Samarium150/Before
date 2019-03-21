@@ -10,29 +10,31 @@ public class ViewEventHandler implements EventHandler<ActionEvent>{
 	
 	View view;
 	
-	public ViewEventHandler(View view){
+	ViewEventHandler(View view){
 		this.view = view;
 	}
 
 	@Override
 	public void handle(ActionEvent event) {
-
 		String command = ((MenuItem) event.getSource()).getId();
-		
-		if(command.equals("New Game")){
-			this.view.createNewGame();
-		}else if(command.equals("Help")) {
-			Alert alert = new Alert(AlertType.INFORMATION);
-	        alert.setTitle("Instructions");
-	        alert.setHeaderText("The Game of Chess");
-	        alert.setContentText("THIS IS HOW YOU PLAY");
-	        alert.showAndWait();
-		}else if (command.equals("Main Menu")) {
-			this.view.createNewGame();
-			this.view.changeToStart();
-		}else if(command.equals("Exit")){
-			System.exit(0);
-		}	
+		switch (command) {
+			case "New Game":
+				this.view.createNewGame();
+				break;
+			case "Help":
+				Alert alert = new Alert(AlertType.INFORMATION);
+				alert.setTitle("Instructions");
+				alert.setHeaderText("The Game of Chess");
+				alert.setContentText("THIS IS HOW YOU PLAY");
+				alert.showAndWait();
+				break;
+			case "Main Menu":
+				this.view.createNewGame();
+				this.view.changeToStart();
+				break;
+			case "Exit":
+				System.exit(0);
+				break;
+		}
 	}
-
 }
