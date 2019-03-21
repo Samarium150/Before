@@ -66,7 +66,7 @@ For [IntelliJ IDEA](https://www.jetbrains.com/idea/):
 
 ## Extending the Game
 <a href="#">[To Top]</a><br>
-The game is coded in Java using JavaFX, so be sure to have an editor and an IDE such as [Eclipse](https://www.eclipse.org/downloads/packages/) or [IntelliJ IDEA](https://www.jetbrains.com/idea/) if you want to extend this game for yourself.
+The game is coded in Java using Java AWT, so be sure to have an editor and an IDE such as [Eclipse](https://www.eclipse.org/downloads/packages/) or [IntelliJ IDEA](https://www.jetbrains.com/idea/) if you want to extend this game for yourself.
 ### Extending the Board
 The board is an array with positions 0 to 63 with 0 being the top left of the board, 7 being top right, 56 being bottom left, and 63 being bottom right.
 
