@@ -22,7 +22,7 @@ We've created the base game of chess with the framework for modification and ext
 <a href="#">[To Top]</a>
 ### Rules
 The rules of chess can be found <a href="https://www.chess.com/learn-how-to-play-chess">here</a> which redirects to https://www.chess.com/learn-how-to-play-chess.
-<br><strong>Rules we have omitted/not implemented from our game:</strong>
+<br><strong>Rules we have omitted from our game:</strong>
 <ul>
 	<li>Points of each piece</li>
 	<li>Promoting a Pawn</li>
@@ -37,6 +37,14 @@ Click on a piece to select it, then click on the desired square to move it to th
 - If the chosen position is <strong>not</strong> a valid movement path for the piece the selected piece will be deselected and no movement will occur.
 - You cannot take your own pieces.
 - Only the knight may "jump" past pieces; that is to say all other pieces cannot pass or jump past other pieces.
+
+Clicking `Game` in the toolbar will give you a list of options:
+<ul>
+	<li><strong>New Game</strong> will initialize a new board and restart the game</li>
+	<li><strong>Help</strong> will take you to the GitHub README.md</li>
+	<li><strong>Main Menu</strong> Will take you back to the Start Panel screen</li>
+	<li><strong>Exit</strong> will close the game</li>
+</ul>
 
 ### Versus AI
 ## Installation
