@@ -1,6 +1,6 @@
 # Chess - By Team Before
 ## Introduction
-We've created the base game of chess with the framework for modification and extension. New pieces can be implemented by following the documentation in the <a href="#Extend">Extending the Game</a> section.
+We've created the base game of chess with the framework for modification and extension. New pieces can be implemented by following the documentation in the <a href="#Extending-the-Game">Extending the Game</a> section.
 ## Index
 - [Screenshots](#Screenshots)
 - [Game Features](#Game-Features)
@@ -22,7 +22,7 @@ We've created the base game of chess with the framework for modification and ext
 <a href="#">[To Top]</a>
 ### Rules
 The rules of chess can be found <a href="https://www.chess.com/learn-how-to-play-chess">here</a> which redirects to https://www.chess.com/learn-how-to-play-chess.
-<strong>Rules we have omitted/not implemented from our game</strong>
+<br><strong>Rules we have omitted/not implemented from our game:</strong>
 <ul>
 	<li>Points of each piece</li>
 	<li>Promoting a Pawn</li>
