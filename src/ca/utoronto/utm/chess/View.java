@@ -9,10 +9,6 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.*;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.net.URISyntaxException;
-
 /**
  * the class of view part of MVC modal
  */
@@ -28,7 +24,7 @@ class View {
 	
 	private BorderPane root = new BorderPane();
 	
-	View(Stage stage) throws FileNotFoundException, URISyntaxException{
+	View(Stage stage) {
 		this.stage = stage;
 		this.initUI(stage); 
 	}

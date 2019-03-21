@@ -8,9 +8,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-
 /**
  * the class for home page of the game inherited from Javafx StackPane
  */

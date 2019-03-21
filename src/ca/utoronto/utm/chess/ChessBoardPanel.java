@@ -7,10 +7,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.layout.GridPane;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.net.URISyntaxException;
-
 /**
  * the class of the chess game board inherited from Javafx GridPane
  */
