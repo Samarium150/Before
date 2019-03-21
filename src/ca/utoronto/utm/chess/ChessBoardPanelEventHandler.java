@@ -2,8 +2,11 @@ package ca.utoronto.utm.chess;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
+import javafx.scene.control.Alert.AlertType;
 
 /**
  * the handler class for the chess board
@@ -61,6 +64,25 @@ public class ChessBoardPanelEventHandler implements EventHandler<ActionEvent>{
 			
 			if (board.getPiece(pre).move(now)) {
 				this.view.chessBoardPanel.setImg(piece_x, piece_y, prev_piece);
+				
+				System.out.println("PIECE " + piece_name);
+				
+				if(piece_name.equals("white_king")) {
+					Alert alert = new Alert(AlertType.INFORMATION);
+					alert.setTitle("Winner!");
+					alert.setHeaderText("Congratulations");
+					alert.setContentText("The winner is the black team!!!");
+					alert.setGraphic(new ImageView(("/black_pawn.png")));
+					alert.showAndWait();
+				}else if(piece_name.equals("black_king")) {
+					Alert alert = new Alert(AlertType.INFORMATION);
+					alert.setTitle("Winner!");
+					alert.setHeaderText("Congratulations");
+					alert.setContentText("The winner is the white team!!!");
+					alert.setGraphic(new ImageView(("/white_pawn.png")));
+					alert.showAndWait();
+				}	
+				
 				if("w".equals(current_turn.substring(0, 1))) {
 					turn_label.setText("black team");
 				}else {
