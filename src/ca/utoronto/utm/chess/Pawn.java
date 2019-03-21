@@ -2,7 +2,9 @@ package ca.utoronto.utm.chess;
 
 import java.util.ArrayList;
 
-
+/**
+ * the class of pawn piece inherited from PieceFactory class
+ */
 public class Pawn extends PieceFactory{
 	
 	public Pawn(BoardFactory board, int id) {

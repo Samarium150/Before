@@ -9,8 +9,13 @@ import javafx.scene.layout.GridPane;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.net.URISyntaxException;
 
+/**
+ * the class of the chess game board inherited from Javafx GridPane
+ */
 public class ChessBoardPanel extends GridPane{
+	
 	private Canvas canvas;
 	private View view;
 	protected BoardFactory board = new RegularBoard();
@@ -20,21 +25,21 @@ public class ChessBoardPanel extends GridPane{
 	private Image white_pawn, white_rook, white_knight, white_bishop, white_queen, white_king;
 	private Image black_pawn, black_rook, black_knight, black_bishop, black_queen, black_king;
 	
-	ChessBoardPanel(View view) throws FileNotFoundException {
+	ChessBoardPanel(View view) {
 		
-		white_pawn = new Image(new FileInputStream("resources/white_pawn.png"));
-		white_rook = new Image(new FileInputStream("resources/white_rook.png"));
-		white_knight = new Image(new FileInputStream("resources/white_knight.png"));
-		white_bishop = new Image(new FileInputStream("resources/white_bishop.png"));
-		white_queen = new Image(new FileInputStream("resources/white_queen.png"));
-		white_king = new Image(new FileInputStream("resources/white_king1.png"));
+		white_pawn = new Image(this.getClass().getResource("/white_pawn.png").toString());
+		white_rook = new Image(this.getClass().getResource("/white_rook.png").toString());
+		white_knight = new Image(this.getClass().getResource("/white_knight.png").toString());
+		white_bishop = new Image(this.getClass().getResource("/white_bishop.png").toString());
+		white_queen = new Image(this.getClass().getResource("/white_queen.png").toString());
+		white_king = new Image(this.getClass().getResource("/white_king1.png").toString());
 
-		black_pawn = new Image(new FileInputStream("resources/black_pawn.png"));
-		black_rook = new Image(new FileInputStream("resources/black_rook.png"));
-		black_knight = new Image(new FileInputStream("resources/black_knight.png"));
-		black_bishop = new Image(new FileInputStream("resources/black_bishop.png"));
-		black_queen = new Image(new FileInputStream("resources/black_queen.png"));
-		black_king = new Image(new FileInputStream("resources/black_king1.png"));
+		black_pawn = new Image(this.getClass().getResource("/black_pawn.png").toString());
+		black_rook = new Image(this.getClass().getResource("/black_rook.png").toString());
+		black_knight = new Image(this.getClass().getResource("/black_knight.png").toString());
+		black_bishop = new Image(this.getClass().getResource("/black_bishop.png").toString());
+		black_queen = new Image(this.getClass().getResource("/black_queen.png").toString());
+		black_king = new Image(this.getClass().getResource("/black_king1.png").toString());
 
 		String colour_gray = "-fx-background-color:#AAAAAA; -fx-border-color:#AAAAAA;"
 				+ "-fx-border-radius: 0, 0, 0, 0;";
@@ -125,17 +130,6 @@ public class ChessBoardPanel extends GridPane{
 		button[7][5].setId("white_bishop" + " " + 7 + " " + 5);
 		button[7][6].setId("white_knight" + " " + 7 + " " + 6);
 		button[7][7].setId("white_rook" + " " + 7 + " " + 7);
-		
-		/*
-		for(int i = 0; i < 8; i++) {
-			for(int j = 0; j < 8; j++) {
-				
-				System.out.print(button[i][j].getId() + " ");
-			}
-			System.out.println();
-		}
-		*/
-		
 	}
 	
 	void setImg(int x, int y, String piece) {

@@ -2,7 +2,9 @@ package ca.utoronto.utm.chess;
 
 import java.util.ArrayList;
 
-
+/**
+ * the class of bishop piece inherited from PieceFactory class
+ */
 public class Bishop extends PieceFactory{
 	
 	Bishop(BoardFactory board, int id) {
@@ -12,7 +14,7 @@ public class Bishop extends PieceFactory{
 	
 	@Override
 	public ArrayList<Integer> possibleMoves() {
-		ArrayList<Integer> moves =  new ArrayList<Integer>();
+		ArrayList<Integer> moves =  new ArrayList<>();
 		bishopOverallMovement(moves);
 		return movesFilter(moves);
 	}

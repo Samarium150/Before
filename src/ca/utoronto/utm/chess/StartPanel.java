@@ -11,13 +11,15 @@ import javafx.scene.layout.StackPane;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
-
+/**
+ * the class for home page of the game inherited from Javafx StackPane
+ */
 class StartPanel extends StackPane {
 	
 	private Canvas canvas;
 	private View view;
 	
-	StartPanel(View view) throws FileNotFoundException {
+	StartPanel(View view) {
 		this.view = view;
 		this.canvas = new Canvas(475, 475);
 		this.getChildren().add(this.canvas);
@@ -35,9 +37,8 @@ class StartPanel extends StackPane {
 		label.setMinWidth(200);
 		label.setPrefHeight(100);
 		
-		label.setGraphic(new ImageView(new Image(new FileInputStream("resources/king2.png"))));
+		label.setGraphic(new ImageView(new Image(this.getClass().getResource("/king2.png").toString())));
 		this.getChildren().add(label);
 		this.setAlignment(label, Pos.CENTER);
 	}
-
 }

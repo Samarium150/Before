@@ -11,8 +11,11 @@ import javafx.stage.*;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.net.URISyntaxException;
 
-
+/**
+ * the class of view part of MVC modal
+ */
 class View {
 	
 	private Stage stage;
@@ -25,16 +28,16 @@ class View {
 	
 	private BorderPane root = new BorderPane();
 	
-	View(Stage stage) throws FileNotFoundException{
+	View(Stage stage) throws FileNotFoundException, URISyntaxException{
 		this.stage = stage;
 		this.initUI(stage); 
 	}
 	
-	private void initUI(Stage stage) throws FileNotFoundException {
+	private void initUI(Stage stage) {
 
 		this.chessBoardPanel = new ChessBoardPanel(this);
 		this.startPanel = new StartPanel(this);
-		this.icon = new Image(new FileInputStream("resources/icon.png"));
+		this.icon = new Image(this.getClass().getResource("/icon.png").toString());
 		
 		root.setTop(createMenuBar());
 		root.setCenter(this.startPanel);
@@ -89,13 +92,8 @@ class View {
 	}
 	
 	void createNewGame(){
-		try {
-			this.chessBoardPanel = new ChessBoardPanel(this);
-			this.root.setCenter(this.chessBoardPanel);
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-		
+		this.chessBoardPanel = new ChessBoardPanel(this);
+		this.root.setCenter(this.chessBoardPanel);
 	}
 	
 	void changeToStart() {
