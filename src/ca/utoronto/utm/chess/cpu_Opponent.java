@@ -2,6 +2,9 @@ package ca.utoronto.utm.chess;
 
 import java.util.*;
 
+/**
+ * the class for CPU game features
+ */
 public class cpu_Opponent {
 
 	private int Difficulty;
@@ -9,7 +12,8 @@ public class cpu_Opponent {
 	private ArrayList<Integer> OpponentTeams;
 	private HashMap<String, Integer> values = new HashMap<String, Integer>();
 	
-	/**Creates a new instance of the CPU Opponent object.
+	/**
+	 * Creates a new instance of the CPU Opponent object.
 	 * @param Difficulty
 	 * The number of moves the CPU will look ahead each turn.
 	 * @param Team
@@ -31,7 +35,8 @@ public class cpu_Opponent {
 		
 	}
 	
-	/**Acts as the CPU taking its turn.
+	/**
+	 * Acts as the CPU taking its turn.
 	 * @param Board
 	 * The current BoardFactory state.
 	 * @return A BoardFactory representing the board after the CPU's turn.
@@ -61,7 +66,8 @@ public class cpu_Opponent {
 		return Best_Play;
 	}
 	
-	/**Finds the score of the given board. For use in determining the best play for the CPU opponent to make.
+	/**
+	 * Finds the score of the given board. For use in determining the best play for the CPU opponent to make.
 	 * @param Board 
 	 * The game state to be evaluated.
 	 * @param Depth
@@ -112,7 +118,8 @@ public class cpu_Opponent {
 		return Current_Score;
 	}
 	
-	/**Finds all possible moves for a given player and board, and returns them as an arraylist of board states.
+	/**
+	 * Finds all possible moves for a given player and board, and returns them as an arraylist of board states.
 	 * @param Board
 	 * The board of which to find all possible moves.
 	 * @param Team
@@ -140,7 +147,9 @@ public class cpu_Opponent {
 	
 	
 	
-	/**Gets the new board after the given move.\nYou'd think this being its own function is kinda dumb, but it's necessary to copy the Board and not change the current one.
+	/**
+	 * Gets the new board after the given move.\nYou'd think this being its own function is kinda dumb,
+	 * but it's necessary to copy the Board and not change the current one.
 	 * @param Board
 	 * The board to copy.
 	 * @param Piece
@@ -167,7 +176,8 @@ public class cpu_Opponent {
 		return Board;
 	}
 	
-	/**Finds a score value for the given board. Pieces of the same team as this object are valued positively,
+	/**
+	 * Finds a score value for the given board. Pieces of the same team as this object are valued positively,
 	 * while others are valued negatively. The total of these two values is returned and the score of the board.
 	 * @param Board
 	 * The board of which to find the score value.

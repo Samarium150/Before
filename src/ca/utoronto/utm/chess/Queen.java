@@ -2,7 +2,9 @@ package ca.utoronto.utm.chess;
 
 import java.util.ArrayList;
 
-
+/**
+ * the class of queen piece inherited from PieceFactory class
+ */
 public class Queen extends PieceFactory{
 	
 	Queen(BoardFactory board, int id) {
@@ -20,7 +22,6 @@ public class Queen extends PieceFactory{
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
 		return "Q";
 	}
 }

@@ -6,9 +6,12 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.MenuItem;
 
+/**
+ * the handler class for the view
+ */
 public class ViewEventHandler implements EventHandler<ActionEvent>{
 	
-	View view;
+	private View view;
 	
 	ViewEventHandler(View view){
 		this.view = view;

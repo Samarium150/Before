@@ -2,7 +2,9 @@ package ca.utoronto.utm.chess;
 
 import java.util.ArrayList;
 
-
+/**
+ * the class of king piece inherited from PieceFactory class
+ */
 public class King extends PieceFactory{
 
 	King(BoardFactory board, int id) {

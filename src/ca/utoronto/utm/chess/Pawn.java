@@ -2,7 +2,9 @@ package ca.utoronto.utm.chess;
 
 import java.util.ArrayList;
 
-
+/**
+ * the class of pawn piece inherited from PieceFactory class
+ */
 public class Pawn extends PieceFactory{
 	
 	public Pawn(BoardFactory board, int id) {
@@ -12,9 +14,9 @@ public class Pawn extends PieceFactory{
 
 	@Override
 	public ArrayList<Integer> possibleMoves() {
-		int curr = this.board.getPieceLocation(this.id);
-		ArrayList<Integer> moves =  new ArrayList<Integer>();
-		int sign = (board.getPieceOwner(this.id) == 1)? 1: -1;
+		int curr = this.board.getPieceLocation(this.id); //pawns current position
+		ArrayList<Integer> moves =  new ArrayList<Integer>(); //all posible moves
+		int sign = (board.getPieceOwner(this.id) == 1)? 1: -1; //1 for white, -1 for black
 		
 		if((8 <= curr && curr <= 15) || (48 <= curr && curr <= 55)) moves.add(curr+sign*16);
 		

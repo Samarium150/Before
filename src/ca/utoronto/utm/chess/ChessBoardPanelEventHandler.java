@@ -5,6 +5,9 @@ import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
+/**
+ * the handler class for the chess board
+ */
 public class ChessBoardPanelEventHandler implements EventHandler<ActionEvent>{
 	
 	private static String prev_piece = "";

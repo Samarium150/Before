@@ -2,7 +2,9 @@ package ca.utoronto.utm.chess;
 
 import java.util.ArrayList;
 
-
+/**
+ * the abstract class for all chess pieces
+ */
 public abstract class PieceFactory {
 	
 	public int id;
@@ -14,15 +16,11 @@ public abstract class PieceFactory {
 	
 	ArrayList<Integer> movesFilter(ArrayList<Integer> moves) {
 		for(int i = 0; i < moves.size(); i++) {
-			if ( (moves.get(i) < 0 || moves.get(i) >= board.getOverallLocation().length) || board.getSquareOwner(moves.get(i)) == board.getPieceOwner(this.id))  {
+			if ((moves.get(i) < 0
+					|| moves.get(i) >= board.getOverallLocation().length)
+					|| board.getSquareOwner(moves.get(i)) == board.getPieceOwner(this.id))  {
 				moves.remove(i);
 				i--;
-				//these lines broke the game.
-				/*
-				if (board.getSquareOwner(moves.get(i)) == board.getPieceOwner(this.id)) {
-					//break;
-				}
-				*/
 			}
 		}
 		return moves;
@@ -81,11 +79,22 @@ public abstract class PieceFactory {
 	}
 	
 	private void straightMovementsStrategy(ArrayList<Integer> moves, int moveNum, int[] bounds) {
-		int curr = this.board.getPieceLocation(this.id); //the piece's current position
-		for(int temp = curr + moveNum; board.getSquareOwner(temp) != -1; temp += moveNum) { //loop through every tile diagonally and to the left, until you find a tile out of bounds
-			if (board.getSquareOwner(temp) == board.getPieceOwner(this.id)) break; //if there's a friendly unit on the specific tile, stop
-			moves.add(temp); //add the move to the array of possible moves
-			if (this.isInArray(bounds, temp) || (board.getSquareOwner(temp) != 0 && board.getSquareOwner(temp) != board.getPieceOwner(this.id)) ) break; //doesnt check in the direction if the piece is against the wall, or if there's an enemy piece there
+		//the piece's current position
+		int curr = this.board.getPieceLocation(this.id);
+		
+		//loop through every tile diagonally and to the left, until you find a tile out of bounds
+		for(int temp = curr + moveNum; board.getSquareOwner(temp) != -1; temp += moveNum) {
+			//if there's a friendly unit on the specific tile, stop
+			if (board.getSquareOwner(temp) == board.getPieceOwner(this.id)) break;
+			
+			//add the move to the array of possible moves
+			moves.add(temp);
+			
+			if (this.isInArray(bounds, temp)
+					|| (board.getSquareOwner(temp) != 0
+					&& board.getSquareOwner(temp) != board.getPieceOwner(this.id)))
+				break;
+			//doesnt check in the direction if the piece is against the wall, or if there's an enemy piece there
 		}
 	}
 	
@@ -107,5 +116,4 @@ public abstract class PieceFactory {
 		}
 		return false;
 	}
-	
 }

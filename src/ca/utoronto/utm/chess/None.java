@@ -2,9 +2,13 @@ package ca.utoronto.utm.chess;
 
 import java.util.ArrayList;
 
+/**
+ * the class of none piece inherited from PieceFactory class
+ * used for filling out the game board
+ */
 public class None extends PieceFactory{
 	
-	None () {
+	None() {
 		this.id = -1;
 	}
 	
@@ -13,8 +17,7 @@ public class None extends PieceFactory{
 
 	@Override
 	public ArrayList<Integer> possibleMoves() {
-		ArrayList<Integer> moves = new ArrayList<Integer>();
-		return moves;
+		return new ArrayList<>();
 	}
 
 	@Override
