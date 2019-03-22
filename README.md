@@ -6,7 +6,6 @@ We've created the base game of chess with the framework for modification and ext
 - [Game Features](#Game-Features)
 	- [Rules](#Rules)
 	- [Controls](#Controls)
-	- [Versus AI](#Versus-AI)
 - [Installation](#Installation)
 - [Extending the Game](#Extending-the-Game)
 	- [Extending the Pieces](#Extending-the-Pieces)
@@ -38,7 +37,6 @@ Click on a piece to select it, then click on the desired square to move it to th
 - You cannot take your own pieces.
 - Only the knight may "jump" past pieces; that is to say all other pieces cannot pass or jump past other pieces.
 
-### Versus AI
 ## Installation
 <a href="#">[To Top]</a><br>
 To play the game download the executable .jar file and run it on your computer.
